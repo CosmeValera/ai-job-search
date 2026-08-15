@@ -4,51 +4,61 @@ framework_version: 1.0.0
 
 # Behavioral Profile
 
-<!-- SETUP: This file is populated by running /setup -->
-<!-- You can use results from PI, DISC, Myers-Briggs, StrengthsFinder, or a self-assessment -->
+<!-- No formal assessment (PI, DISC, Myers-Briggs, StrengthsFinder) on file.
+     Everything below is inferred from source documents and labelled as such.
+     Review each item critically before relying on it in an application. -->
 
 ## Overview
-[YOUR_NAME]'s behavioral assessment identifies them as a **[PROFILE_TYPE]** pattern. [1-2 SENTENCE_SUMMARY].
+No formal behavioral assessment has been completed. The observations below are inferred from the LinkedIn About section and CV content, and should be treated as starting points rather than validated findings.
 
 ## Core Behavioral Drives
 
 | Drive | Level | Meaning |
 |-------|-------|---------|
-| [DRIVE_1] | [LEVEL] | [DESCRIPTION] |
-| [DRIVE_2] | [LEVEL] | [DESCRIPTION] |
-| [DRIVE_3] | [LEVEL] | [DESCRIPTION] |
-| [DRIVE_4] | [LEVEL] | [DESCRIPTION] |
+| *(not assessed)* | - | Complete a PI / DISC / StrengthsFinder assessment to populate this table |
 
 ## Strongest Behaviors
-- **[BEHAVIOR_1]:** [DESCRIPTION]
-- **[BEHAVIOR_2]:** [DESCRIPTION]
-- **[BEHAVIOR_3]:** [DESCRIPTION]
+
+- **Fast learner, outcome-driven** *[Inferred from LinkedIn About - review before relying on this]*
+  Source: "Aprendo rápido y me esfuerzo por lograr soluciones sobresalientes que satisfagan las demandas del cliente." (I learn quickly and push for outstanding solutions that meet the client's demands.)
+
+- **Code-quality oriented** *[Inferred from CV - review before relying on this]*
+  Names code reviews, pair programming, refactoring, and clean code principles as deliberate practice, not just as tasks performed.
+
+- **Comfortable at the client interface** *[Inferred from CV - review before relying on this]*
+  Worked directly with ESA engineers to clarify requirements, gather feedback, and translate operational needs into user stories and features. This is a stakeholder-facing pattern, not purely heads-down implementation.
+
+- **Adaptable across stacks and countries** *[Inferred from CV - review before relying on this]*
+  Moved Angular to React, Spain to Ireland to Spain, intern to hired within three months at Capgemini. Relocated for an Erasmus+ placement and is now actively targeting relocation to Milan or Berlin.
 
 ## How You Work Best
-- [ENVIRONMENT_PREFERENCE_1]
-- [ENVIRONMENT_PREFERENCE_2]
-- [ENVIRONMENT_PREFERENCE_3]
+<!-- Not yet captured. Answer these during a /setup --section behavioral run:
+     - What work environments do you thrive in?
+     - What drains your energy at work?
+     - How do you prefer to work in teams?
+     - Do you decide quickly or deliberately?
+     - What is your communication style? -->
+- Agile team settings with regular ceremonies (demonstrated across GMV and Capgemini, not stated as a preference)
 
 ## Growth Areas (frame positively in applications)
-- **[AREA_1]:** [HOW_TO_FRAME_IT_POSITIVELY]
-- **[AREA_2]:** [HOW_TO_FRAME_IT_POSITIVELY]
+<!-- Not yet captured. -->
 
 ## Mapping to Job Posting Language
 
-When a job posting mentions these keywords, it's a **strong behavioral fit**:
-- [KEYWORD_OR_PHRASE_THAT_MATCHES_YOUR_STYLE]
-- [ANOTHER_KEYWORD]
+When a job posting mentions these keywords, it is likely a **strong behavioral fit**:
+- Code review culture, pair programming, clean code, refactoring
+- Cross-functional work with clients or domain experts
+- Agile / Scrum ceremonies
+- International or English-speaking team
 
-When a job posting mentions these, flag as **potential friction** (not deal-breaker):
-- [KEYWORD_OR_PHRASE_THAT_MIGHT_CLASH]
-- [ANOTHER_KEYWORD]
+When a job posting mentions these, flag as **potential friction** (not a deal-breaker):
+- Italian-language or German-language working environment (see the Language Gate note in `01-candidate-profile.md`)
 
 ## Management Style Preferences
-- [WHAT_MANAGEMENT_STYLE_WORKS_FOR_YOU]
-- [WHAT_DOESN'T_WORK]
+<!-- Not yet captured. -->
 
 ## Using This in Applications
-- **Cover letters:** [HOW_TO_WEAVE_IN_BEHAVIORAL_STRENGTHS]
-- **CV:** [WHAT_TO_EMPHASIZE]
-- **Interviews:** [WHAT_STAR_EXAMPLES_TO_USE]
-- **Don't overstate:** [WHAT_NOT_TO_CLAIM]
+- **Cover letters:** lead with the ESA stakeholder work and the Helm/Jenkins deployment improvements, both of which show initiative beyond assigned tickets
+- **CV:** emphasize React/TypeScript depth plus the DevOps breadth, which is unusual at this experience level
+- **Interviews:** see the STAR candidates in `07-interview-prep.md`
+- **Don't overstate:** no formal assessment exists, so do not claim assessed traits. Avoid claiming leadership or mentoring experience, which the documents do not evidence.

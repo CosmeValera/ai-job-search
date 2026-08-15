@@ -60,9 +60,9 @@ How well do the required/preferred skills align with the candidate's capabilitie
 | 40-59 | Partial match, significant upskilling needed |
 | 0-39 | Fundamental mismatch |
 
-**Strong match areas:** [YOUR_PRIMARY_SKILLS]
-**Moderate match areas:** [YOUR_SECONDARY_SKILLS]
-**Weak match areas:** [SKILLS_YOU_LACK]
+**Strong match areas:** React, TypeScript, JavaScript, CSS, Angular, responsive web development, Git
+**Moderate match areas:** Node, Java (Spring), PostgreSQL/MySQL, Docker, Kubernetes, Helm, Kustomize, Jenkins, GitHub Actions, AWS (EC2, RDS, S3, Lambda), Figma, Scrum
+**Weak match areas:** Vue, Svelte, Next.js/SSR frameworks, React Native/mobile, Python at production scale, Go/Rust/Kotlin, data engineering, ML, native cloud architecture beyond the AWS services listed above, formal leadership or line management
 
 ### 2. Experience Match (0-100)
 Does work history align with what they're looking for?
@@ -74,9 +74,9 @@ Does work history align with what they're looking for?
 | 40-59 | Adjacent experience, would need to make the case |
 | 0-39 | Unrelated experience |
 
-**Strong:** [YOUR_DIRECT_EXPERIENCE_DOMAINS]
-**Moderate:** [YOUR_ADJACENT_EXPERIENCE]
-**Entry-level:** [ROLES_WITH_LIMITED_EXPERIENCE]
+**Strong:** Frontend development in React/TypeScript for enterprise and institutional clients; Angular full-stack delivery; working inside Agile teams against external stakeholders (ESA, ADIF/Renfe)
+**Moderate:** Full-stack roles where the backend is Node or Java/Spring; DevOps-adjacent roles touching Docker, Kubernetes, Helm, and Jenkins; roles in space, aerospace, transport, or critical-infrastructure domains
+**Entry-level:** Senior or lead titles (approximately 4 years total experience as of 2026, no line management); backend-primary roles; anything requiring a language beyond Spanish/English/French
 
 ### 3. Behavioral/Culture Fit (0-100)
 Does the role and company culture match the behavioral profile?
@@ -91,9 +91,22 @@ Does the role and company culture match the behavioral profile?
 **Red flags to research:** Department disorganization, work dominated by maintenance over development, poor chemistry with leadership, culture mismatches. Check reviews, media coverage, LinkedIn connections, and network contacts for insider perspective.
 
 ### 4. Location & Logistics (Pass/Fail + Notes)
-- Within commute range: PASS
-- Remote with occasional office: PASS
-- Requires relocation: FAIL (deal-breaker)
+
+Relocation is the **goal**, not a deal-breaker. The candidate currently lives in Madrid and is actively seeking to leave Spain. Score location in tiers:
+
+| Tier | Locations | Verdict |
+|---|---|---|
+| **Ideal** | Milan, Italy | PASS, top priority |
+| **Ideal** | Berlin, Germany | PASS, top priority |
+| **Tier 2** | Dublin, Amsterdam, Munich, Luxembourg, Zurich/Geneva | PASS, surface but rank below Milan/Berlin. These qualify because they pay well, not because the candidate prefers them. |
+| **Remote** | Fully remote within the EU | PASS |
+| **FAIL** | Madrid or anywhere in Spain | The candidate is explicitly not seeking roles in Spain. |
+| **FAIL** | Outside the EU/EEA/Switzerland | Ignore; not being pursued. Historical UK and Singapore rows in the tracker predate this focus. |
+
+**Milan outranks Berlin.** At equal compensation, prefer Milan (personal reasons). Berlin wins only when Milan has no comparable offer, or when the Berlin offer is substantially higher.
+
+**Work eligibility:** Spanish national, so an EU citizen. Every Ideal and Tier 2 location except Switzerland requires no sponsorship. Do not spend evaluation effort on visa questions for EU roles, and never treat a "no sponsorship available" line as a blocker for them.
+
 - Frequent international travel: FLAG (discuss with user)
 
 ### 5. Career Alignment & Motivation (0-100)
@@ -107,19 +120,29 @@ Does this role advance career goals and contain tasks that energize?
 | 0-39 | Dead end or backwards step |
 
 **Career goals:**
-- [YOUR_CAREER_GOAL_1]
-- [YOUR_CAREER_GOAL_2]
-- [YOUR_CAREER_GOAL_3]
+- Relocate out of Spain to Milan (first choice) or Berlin
+- Grow from mid-level toward senior frontend / full-stack, on React and TypeScript
+- Work in an English-speaking international team
+<!-- Confirm and extend these during /setup --section goals. They are inferred from the
+     application history and the relocation targets, not stated by the candidate directly. -->
 
 **Motivation filter:** Evaluate not just whether you *can* do the tasks, but whether the tasks will *energize* you. Consider:
-- Tasks that energize: [YOUR_ENERGIZING_TASKS]
-- Tasks that drain: [YOUR_DRAINING_TASKS]
+- Tasks that energize: *(not yet captured - ask the candidate)*
+- Tasks that drain: *(not yet captured - ask the candidate)*
 - Non-task factors: leadership style, department culture, company values, degree of autonomy
 
-**Life situation alignment:** Consider personal constraints:
-- **Security**: [YOUR_FINANCIAL_SITUATION_CONTEXT]
-- **Flexibility**: [YOUR_SCHEDULE_CONSTRAINTS]
-- **Professional development**: [YOUR_GROWTH_PRIORITIES]
+**Life situation alignment:**
+- **Security**: Currently employed at GMV, so there is no urgency. This is a search for a better role, not a search under pressure. A weak offer can be declined.
+- **Salary bands** (from the candidate's own tracker legend, confirmed during setup):
+
+  | City | Acceptable | Target |
+  |---|---|---|
+  | Milan | 45-50K € | 48-50K €+ |
+  | Berlin | 50-60K € | 55-60K €+ |
+
+  Below the acceptable floor, flag the posting explicitly rather than dropping it. Do not treat an unstated salary as a failure - most postings omit it.
+- **Flexibility**: *(not yet captured)*
+- **Professional development**: *(not yet captured)*
 
 ### 6. Salary Benchmark (Optional)
 
@@ -193,6 +216,21 @@ Present the evaluation as:
 - **Moderate Fit** (45-59): Consider carefully, discuss with user
 - **Weak Fit** (30-44): Probably skip unless strategic reasons
 - **Poor Fit** (<30): Skip
+
+## Calibration from Past Applications
+
+Drawn from `job_search_tracker.csv` (173 rows, June 2025 - August 2026), imported during `/setup` Path A. There are no `documents/applications/` folders yet, so there is no cover letter, CV draft, or interview feedback to learn from - only the outcome column.
+
+**The headline number:** 173 applications, 1 recorded response that progressed (Amplemarket, Milan, technical quiz). That is a response rate near 0.6%. Whatever the cause, it is not a shortage of applications sent.
+
+What this implies for evaluation:
+
+- **Volume is not the bottleneck; targeting and materials are.** Prefer a smaller number of properly tailored applications over another wide sweep. The `/apply` workflow exists for exactly this, and none of the 173 rows went through it.
+- **The historical spread was extremely wide** - London, Dublin, Berlin, Milan, Amsterdam, Munich, Luxembourg, Zurich, Prague, Singapore - and much of it needed visa sponsorship the candidate did not need for EU roles. Effort was spread across markets where a non-resident applicant is filtered out early. The Milan/Berlin focus set during this setup is a correction; hold it.
+- **Big-tech and highly competitive listings are heavily represented** (Meta, Apple, Microsoft, Amazon, Stripe, Shopify, Pinterest, Zalando, PayPal, Klarna) with no recorded progression. Score these honestly against the experience dimension rather than optimistically: roughly 4 years, no senior scope, no line management.
+- **No sector concentration is visible.** Fintech, crypto, mobility, energy, HR-tech, and travel all appear once or twice. The candidate's actual differentiator - space/satellite systems via ESA Galileo, and rail infrastructure via ADIF - was not being used to target adjacent employers. Aerospace, space, defence, transport, and geospatial companies in Milan and Berlin are an underexploited lane where the GMV experience is directly relevant rather than incidental.
+
+**Do not over-read the outcome column.** The statuses were reconstructed during import from the candidate's rule of thumb (dead unless recent), not recorded per-application at the time. Treat `no_response` here as "no reply received", never as evidence of a specific rejection reason.
 
 ## Pre-Application: Call the Employer (Best Practice)
 

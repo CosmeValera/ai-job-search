@@ -1,10 +1,7 @@
-# Job Application Assistant for [YOUR_NAME]
-
-<!-- SETUP: This file is populated by running /setup -->
-<!-- After running /setup, all [PLACEHOLDER] tokens will be replaced with your actual information -->
+# Job Application Assistant for Cosme Valera Reales
 
 ## Role
-This repo is a job application workspace. Claude acts as a career advisor and application assistant for [YOUR_NAME], helping with:
+This repo is a job application workspace. Claude acts as a career advisor and application assistant for Cosme Valera Reales, helping with:
 1. **Job fit evaluation** - Assess job postings against your profile (skills, experience, behavioral traits)
 2. **CV tailoring** - Adapt existing CV templates (LaTeX/moderncv) to target specific roles
 3. **Cover letter writing** - Draft targeted cover letters using existing templates (LaTeX)
@@ -13,79 +10,81 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 
 ## Candidate Profile
 
-<!-- This section is auto-populated by /setup. You can also fill it in manually. -->
+Full detail lives in `.claude/skills/job-application-assistant/01-candidate-profile.md`. This is the summary.
 
 ### Identity
-- **Name:** [YOUR_NAME]
-- **Location:** [YOUR_CITY], [YOUR_COUNTRY] ([YOUR_COMMUTE_CONSTRAINTS])
+- **Name:** Cosme Valera Reales
+- **Location:** Madrid, Spain. **Actively relocating** - targeting Milan (first choice) and Berlin. Not seeking roles in Spain.
+- **Contact:** cosmevalerareales@gmail.com | +34 650 721 076 | [LinkedIn](https://linkedin.com/in/cosmevalera) | [GitHub](https://github.com/CosmeValera) | [cosmevalera.dev](https://cosmevalera.dev)
+- **Work eligibility:** Spanish national, EU citizen. No sponsorship needed anywhere in the EU/EEA.
 - **Languages:**
   | Language | Level |
   |----------|-------|
-  | [LANGUAGE] | [LEVEL] |
-  <!-- Every language you work in professionally, with your level (CEFR, "native," "professional
-  working proficiency," whatever your CV/LinkedIn use - no need to force it into one scale). An
-  undeclared language is a hard deal-breaker if a posting requires it; a declared language at a
-  lower level than a posting wants is flagged for your own judgment, not auto-rejected. See
-  04-job-evaluation.md's Language Gate. -->
-- **CV language:** [YOUR_CV_LANGUAGE] <!-- English unless your market expects otherwise; /setup asks -->
+  | Spanish | Native |
+  | English | C1 (Cambridge C1 Advanced, Grade C, 190, July 2021) |
+  | French | B1 |
 
-- **Status:** [YOUR_EMPLOYMENT_STATUS]
-- **LinkedIn headline:** "[YOUR_LINKEDIN_HEADLINE]"
+  Italian and German are **not** declared. Postings that require either as a job condition fail the Language Gate in `04-job-evaluation.md`. Target English-language roles in Milan and Berlin.
+- **CV language:** English
+- **Status:** Employed. Mid-Level Frontend Developer at GMV since 10/2023. No urgency, so a weak offer can be declined.
+- **LinkedIn headline:** "Frontend Developer"
 
 ### Education
-<!-- List your degrees, most recent first -->
-- **[DEGREE_LEVEL] in [FIELD]** ([YEAR_START]-[YEAR_END]) - [INSTITUTION]
-  - Thesis: "[THESIS_TITLE]"
-  - Topics: [KEY_TOPICS]
+- **Technician in Development of Web Applications** (2022-2023) - CIFP Carlos III
+  - Topics: JavaScript, PHP, Laravel, MySQL, Angular
+- **Technician in Development of Cross-platform Applications** (2020-2022) - IES Ginés Pérez Chirinos
+  - Topics: Java, Android, Python, Oracle SQL, MongoDB, Firebase
 
 ### Professional Experience
-<!-- List your roles, most recent first -->
-- **[JOB_TITLE]** ([START_DATE] - [END_DATE]) - **[COMPANY]** ([LOCATION])
-  - [KEY_RESPONSIBILITY_1]
-  - [KEY_RESPONSIBILITY_2]
-  - [KEY_ACHIEVEMENT]
+- **Mid-Level Frontend Developer** (10/2023 - Present) - **GMV** (Madrid, Spain)
+  - Develops and maintains 5+ React/TypeScript frontend applications for ESA's Galileo programme, Europe's global satellite navigation system
+  - Containerized and deployed across 2 Kubernetes environments with Docker, Helm and Kustomize; cut manual deployment steps by moving configuration into Helm
+  - Automated monthly multi-environment deployments with Jenkins; contributed backend services in Node and Java (Spring)
+  - Worked directly with ESA engineers translating operational needs into user stories and features
+- **Junior Full Stack Developer** (04/2023 - 07/2023) - **Seanchas Research** (Cork, Ireland)
+  - Erasmus+ placement, full-time in English. Delivered 2 web applications (Angular/Java/MySQL, and WordPress)
+- **Junior Full Stack Developer** (07/2022 - 04/2023) - **Capgemini** (Murcia, Spain)
+  - Built Angular/Spring web applications for ADIF railway infrastructure supporting Renfe and national rail operations
+- **Full Stack Developer Intern** (04/2022 - 07/2022) - **Capgemini** (Murcia, Spain)
+  - Hired into the junior role after three months
 
 ### Technical Skills
-- **Primary:** [YOUR_PRIMARY_SKILLS]
-- **Secondary:** [YOUR_SECONDARY_SKILLS]
-- **Domain:** [YOUR_DOMAIN_EXPERTISE]
-- **Software:** [YOUR_TOOLS_AND_SOFTWARE]
+- **Primary:** React, TypeScript, JavaScript, CSS, Angular
+- **Secondary:** Node, Java (Spring), PostgreSQL, MySQL, MongoDB, Oracle SQL, Docker, Kubernetes, Helm, Kustomize, Jenkins, AWS (EC2, RDS, S3, Lambda), Git, GitHub Actions
+- **Domain:** Space and satellite navigation (Galileo, ESA); railway infrastructure (ADIF, Renfe)
+- **Software:** Figma, WordPress, Scrum/Agile, code review and pair programming
 
 ### Certifications
-<!-- List relevant certifications with dates -->
-- **[CERTIFICATION_NAME]** - [HOURS]h - completed [DATE]
+- **Cambridge C1 Advanced (CAE)** - Grade C, overall score 190 - July 2021
 
 ### Publications
-<!-- List peer-reviewed publications, if any -->
-- [AUTHOR_LIST] ([YEAR]). [TITLE]. [JOURNAL].
+None.
 
 ### Awards
-<!-- List relevant awards, hackathons, competitions -->
-- [AWARD_NAME] - [EVENT] ([YEAR])
+- VII Certamen Regional de Bandas *(year and category not yet recorded)*
+- Beca Chillida *(year and awarding body not yet recorded)*
 
 ### Behavioral Profile
-<!-- Your behavioral assessment results (PI, DISC, Myers-Briggs, or self-assessment) -->
-- **[TRAIT_1]** - [DESCRIPTION]
-- **[TRAIT_2]** - [DESCRIPTION]
-- **Strengths:** [YOUR_STRENGTHS]
-- **Growth areas:** [YOUR_GROWTH_AREAS]
-- **Thrives in:** [YOUR_IDEAL_ENVIRONMENT]
+No formal assessment on file. Inferred signals only, detailed in `02-behavioral-profile.md`:
+- **Fast learner, outcome-driven** - from the LinkedIn About section
+- **Code-quality oriented** - names code review, pair programming, refactoring, clean code as deliberate practice
+- **Comfortable at the client interface** - worked directly with ESA engineers on requirements
+- **Adaptable** - Angular to React, Spain to Ireland, intern to hired in three months
+- **Growth areas:** not yet captured
+- **Thrives in:** not yet captured
 
 ### What Excites You
-<!-- What motivates you professionally -->
-- [PASSION_1]
-- [PASSION_2]
+<!-- Not yet captured. Run /setup --section goals to fill this in - it drives the Career
+     Alignment score, which is 30% of every job evaluation. -->
 
 ### Target Sectors
-<!-- Industries and companies you're targeting -->
-- [SECTOR_1]: [EXAMPLE_COMPANIES]
-- [SECTOR_2]: [EXAMPLE_COMPANIES]
+- **Underexploited lane:** space, aerospace, defence, transport, geospatial - where the ESA Galileo and ADIF rail experience is directly relevant rather than incidental
+- **Historically applied to:** fintech, crypto, mobility, energy, HR-tech, travel, big tech - with no sector concentration and near-zero response rate
 
 ### Deal-breakers
-<!-- Hard constraints on job search. Language requirements are handled separately and
-automatically from your Languages table above - don't duplicate them here. -->
-- [DEALBREAKER_1]
-- [DEALBREAKER_2]
+- Roles in Madrid or anywhere in Spain
+- Roles requiring Italian or German as a working language
+- Compensation below 45K € in Milan or below 50K € in Berlin, without a strong compensating reason
 
 ## Repo Structure
 - `cv/` - LaTeX CV variants (moderncv template, banking style)

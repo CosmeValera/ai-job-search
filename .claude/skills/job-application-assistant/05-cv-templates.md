@@ -43,18 +43,18 @@ Expected output: `Output written on main_<company>_<role>.pdf (2 pages, ...)`. A
     linkcolor=blue,
     filecolor=magenta,
     urlcolor=blue,
-    pdftitle={[YOUR_NAME] - CV},
+    pdftitle={Cosme Valera Reales - CV},
     pdfpagemode=FullScreen,
 }
 \usepackage[scale=0.77]{geometry}
 \usepackage{import}
 
 % Personal data
-\name{[FIRST_NAME]}{[LAST_NAME]}
-\address{[YOUR_ADDRESS]}{}{}
-\phone[mobile]{[YOUR_PHONE]}
-\email{[YOUR_EMAIL]}
-\extrainfo{\href{[YOUR_LINKEDIN_URL]}{LinkedIn}, \href{[YOUR_GITHUB_URL]}{GitHub}}
+\name{Cosme}{Valera Reales}
+\address{Madrid, Spain}{}{}
+\phone[mobile]{+34 650 721 076}
+\email{cosmevalerareales@gmail.com}
+\extrainfo{\href{https://linkedin.com/in/cosmevalera}{LinkedIn}, \href{https://github.com/CosmeValera}{GitHub}, \href{https://cosmevalera.dev}{cosmevalera.dev}}
 
 \begin{document}
 \makecvtitle
@@ -115,12 +115,20 @@ When the role sits outside your home domain, **lead with the domain-transfer arg
 
 **Create 2-3 profile statement templates for your main role types:**
 
-<!-- SETUP: These are populated based on your background -->
-**For [YOUR_PRIMARY_ROLE_TYPE] roles:**
-> [YOUR_PROFILE_STATEMENT_TEMPLATE_1]
+**For Frontend / React roles:**
+> Frontend developer with around four years building and maintaining production web applications in React and TypeScript. At GMV I develop and maintain 5+ frontend applications for the European Space Agency's Galileo programme, Europe's global satellite navigation system, working directly with ESA engineers to turn operational requirements into shipped features. I also own the deployment path for what I build: Docker, Kubernetes, Helm and Jenkins across multiple environments. Fluent in English at C1, currently based in Madrid and relocating to [CITY].
 
-**For [YOUR_SECONDARY_ROLE_TYPE] roles:**
-> [YOUR_PROFILE_STATEMENT_TEMPLATE_2]
+**For Full Stack roles:**
+> Full-stack developer with around four years across React, TypeScript, Angular, Node and Java (Spring). At GMV I work on frontend and backend services for the European Space Agency's Galileo programme, and I deploy them myself using Docker, Kubernetes, Helm and Jenkins. Earlier, at Capgemini, I delivered Angular and Spring applications for ADIF's national rail infrastructure. Comfortable owning a feature end to end, from a Figma design or a stakeholder conversation through to a running container. C1 English, EU citizen, relocating to [CITY].
+
+**For DevOps-leaning / platform-adjacent frontend roles:**
+> Frontend developer who moved toward the infrastructure side. On the ESA Galileo programme at GMV I containerised applications across two Kubernetes environments with Docker, Helm and Kustomize, cut manual deployment steps by moving configuration into Helm, and automated monthly multi-environment releases with Jenkins, alongside my React and TypeScript work. I look for teams where frontend engineers are trusted with the pipeline that ships their code.
+
+**Rules for using these:**
+- Replace `[CITY]` with Milan or Berlin as appropriate. Never leave the placeholder in a compiled CV.
+- The Galileo / ESA line is the single strongest differentiator and should survive every cut. It is verifiable, unusual, and it is what makes this profile distinct from every other mid-level React CV.
+- Do not write "senior". The record supports roughly four years and no line management.
+- CV language is **English** (see `CV language` in `CLAUDE.md`). The Spanish section-heading translations documented above apply only if a Spanish variant is explicitly requested.
 
 Statements labeled *[Used for: <company>_<role>]* were extracted from archived application drafts by `/setup` Path A. They are **phrasing references, never fact sources**: when drafting from one, every factual claim still comes from `01-candidate-profile.md` - a past tailored draft does not vouch for its own accuracy.
 

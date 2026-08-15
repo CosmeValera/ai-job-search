@@ -1,8 +1,7 @@
-%% Example CV - [YOUR_NAME]
+%% Master CV - Cosme Valera Reales
 %% Comprehensive overview of all competencies, experience, and achievements.
 %% Use as a master reference when tailoring role-specific CVs.
 %%
-%% SETUP: Run /setup to populate this with your actual information.
 %% Compile with: lualatex main_example.tex
 %% (pdflatex often fails on modern MiKTeX with fontawesome5 font-expansion errors.)
 
@@ -24,18 +23,19 @@
     linkcolor=blue,
     filecolor=magenta,
     urlcolor=blue,
-    pdftitle={[YOUR_NAME] - CV},
+    pdftitle={Cosme Valera Reales - CV},
     pdfpagemode=FullScreen,
 }
 \usepackage[scale=0.80]{geometry}
 \usepackage{import}
+\usepackage{needspace}
 
 % personal data
-\name{[First]}{[Last]}
-\address{[Your Address, City, Country]}{}{}
-\phone[mobile]{[+XX XXXXXXXXXX]}
-\email{[your.email@example.com]}
-\extrainfo{\href{[https://linkedin.com/in/your-profile]}{LinkedIn}, \href{[https://github.com/your-username]}{GitHub}}
+\name{Cosme}{Valera Reales}
+\address{Madrid, Spain}{}{}
+\phone[mobile]{+34 650 721 076}
+\email{cosmevalerareales@gmail.com}
+\extrainfo{\href{https://linkedin.com/in/cosmevalera}{LinkedIn}, \href{https://github.com/CosmeValera}{GitHub}, \href{https://cosmevalera.dev}{cosmevalera.dev}}
 
 \begin{document}
 
@@ -46,7 +46,7 @@
 % ============================================================
 
 \vspace{6pt}
-\small{[Write a 3-5 line profile statement tailored to the role you're applying for. Focus on what makes you uniquely qualified. Example: "Data scientist with a PhD in [field] and X years of industry experience. Combines deep domain expertise in [domain] with strong applied machine learning and Python development skills. Experienced in developing end-to-end ML pipelines, from data ingestion to stakeholder-facing dashboards."]}
+\small{Frontend developer with around four years building and maintaining production web applications in React and TypeScript. At GMV I develop and maintain 5+ frontend applications for the European Space Agency's Galileo programme, Europe's global satellite navigation system, working directly with ESA engineers to turn operational requirements into shipped features. I also own the deployment path for what I build: Docker, Kubernetes, Helm and Jenkins across multiple environments. C1 English, EU citizen, relocating from Madrid.}
 
 % ============================================================
 %     CORE COMPETENCIES
@@ -56,15 +56,15 @@
 \vspace{1pt}
 \begin{itemize}
 
-\item \textbf{[Skill Category 1]}: [Specific skills, frameworks, tools. Be concrete.]
+\item \textbf{Frontend}: React, TypeScript, JavaScript, CSS, Angular. Responsive interfaces built from Figma designs and stakeholder requirements.
 
-\item \textbf{[Skill Category 2]}: [Specific skills, frameworks, tools.]
+\item \textbf{Backend}: Node, Java (Spring), PostgreSQL, MySQL, MongoDB, Oracle SQL.
 
-\item \textbf{[Skill Category 3]}: [Specific skills, frameworks, tools.]
+\item \textbf{Containers and orchestration}: Docker, Kubernetes, Helm, Kustomize. Deployed and maintained applications across multiple environments.
 
-\item \textbf{[Skill Category 4]}: [Domain expertise, methods, approaches.]
+\item \textbf{CI/CD and cloud}: Jenkins, GitHub Actions, Git. AWS (EC2, RDS, S3, Lambda).
 
-\item \textbf{[Skill Category 5]}: [Tools, platforms, software.]
+\item \textbf{Ways of working}: Scrum and Agile ceremonies, code review, pair programming, refactoring, clean code. Requirements gathering directly with client engineers.
 
 \end{itemize}
 
@@ -76,32 +76,47 @@
 \vspace{3pt}
 \begin{itemize}
 
-% --- Most Recent Role ---
-\item{\cventry{[YYYY-Present]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
+% --- GMV ---
+\needspace{5\baselineskip}
+\item{\cventry{2023-Present}{Mid-Level Frontend Developer}{GMV}{Madrid, Spain}{}{\vspace{1pt}
+Web applications for the European Space Agency's Galileo programme, Europe's global satellite navigation system.
 \begin{itemize}
-    \item [Achievement or responsibility 1 - be specific, use numbers where possible]
-    \item [Achievement or responsibility 2]
-    \item [Achievement or responsibility 3]
-    \item [Achievement or responsibility 4]
+    \item Developed and maintained 5+ frontend applications using React, TypeScript and CSS, improving usability and consistency across Galileo applications
+    \item Built and deployed containerized applications across 2 Kubernetes environments using Docker, Helm and Kustomize, reducing manual deployment steps by moving configuration values into Helm
+    \item Automated monthly deployments of applications across environments using Jenkins
+    \item Contributed to backend services using Node and Java (Spring)
+    \item Worked with ESA engineers to clarify requirements, gather feedback, and translate operational needs into user stories and features
+    \item Improved maintainability through code reviews, pair programming, refactoring and clean code principles
 \end{itemize}}}
 
 \vspace{3pt}
 
-% --- Previous Role ---
-\item{\cventry{[YYYY-YYYY]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
+% --- Seanchas Research ---
+\needspace{5\baselineskip}
+\item{\cventry{Apr 2023 - Jul 2023}{Junior Full Stack Developer}{Seanchas Research}{Cork, Ireland}{}{\vspace{1pt}
+Erasmus+ placement, working full-time in English.
 \begin{itemize}
-    \item [Achievement or responsibility 1]
-    \item [Achievement or responsibility 2]
-    \item [Achievement or responsibility 3]
+    \item Developed and updated 2 web applications: a full-stack application using Angular, TypeScript, CSS, Java and MySQL, and a WordPress-based website
+    \item Used Git and GitHub Actions to support version control and deployment workflows
 \end{itemize}}}
 
 \vspace{3pt}
 
-% --- Earlier Role ---
-\item{\cventry{[YYYY-YYYY]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
+% --- Capgemini (junior) ---
+\needspace{5\baselineskip}
+\item{\cventry{Jul 2022 - Apr 2023}{Junior Full Stack Developer}{Capgemini}{Murcia, Spain}{}{\vspace{1pt}
 \begin{itemize}
-    \item [Achievement or responsibility 1]
-    \item [Achievement or responsibility 2]
+    \item Developed web applications for ADIF railway infrastructure systems, supporting services related to Renfe trains and national rail operations, using Angular, TypeScript, CSS and Java (Spring)
+    \item Built responsive interfaces from Figma designs and client requirements, aligning frontend implementation with business and usability needs
+\end{itemize}}}
+
+\vspace{3pt}
+
+% --- Capgemini (intern) ---
+\needspace{5\baselineskip}
+\item{\cventry{Apr 2022 - Jul 2022}{Full Stack Developer Intern}{Capgemini}{Murcia, Spain}{}{\vspace{1pt}
+\begin{itemize}
+    \item Started with Angular and Java. Hired into the junior role after three months
 \end{itemize}}}
 
 \end{itemize}
@@ -114,16 +129,27 @@
 \vspace{1pt}
 \begin{itemize}
 
-\item{\cventry{[YYYY-YYYY]}{[Degree] in [Field]}{[Institution]}{[City, Country]}{}{\vspace{1pt}
-Thesis: ``[Thesis Title].'' [Brief description of research focus.]
+\needspace{4\baselineskip}
+\item{\cventry{2022-2023}{Technician in Development of Web Applications}{CIFP Carlos III}{Spain}{}{\vspace{1pt}
+JavaScript, PHP, Laravel, MySQL, Angular.
 }}
 
 \vspace{3pt}
 
-\item{\cventry{[YYYY-YYYY]}{[Degree] in [Field]}{[Institution]}{[City, Country]}{}{\vspace{1pt}
-[Brief description or key topics.]
+\item{\cventry{2020-2022}{Technician in Development of Cross-platform Applications}{IES Gin\'es P\'erez Chirinos}{Spain}{}{\vspace{1pt}
+Java, Android, Python, Oracle SQL, MongoDB, Firebase.
 }}
 
+\end{itemize}
+
+% ============================================================
+%     PROJECTS
+% ============================================================
+
+\section{Projects}
+\vspace{1pt}
+\begin{itemize}
+\item \textbf{RabbitHole}: a curiosity wiki. Every new topic comes back explained through what you already know.
 \end{itemize}
 
 % ============================================================
@@ -133,27 +159,18 @@ Thesis: ``[Thesis Title].'' [Brief description of research focus.]
 \section{Languages}
 \vspace{1pt}
 \begin{itemize}
-\item [Language 1] (native), [Language 2] (fluent), [Language 3] (intermediate).
+\item Spanish (native), English (C1, Cambridge C1 Advanced), French (B1).
 \end{itemize}
 
 % ============================================================
-%     PUBLICATIONS (optional)
-% ============================================================
-
-\section{Publications}
-\vspace{1pt}
-\begin{itemize}
-\item [Author(s)] ([Year]). [Title]. [Journal/Conference]. \href{[DOI_URL]}{DOI link}
-\end{itemize}
-
-% ============================================================
-%     HONORS AND AWARDS (optional)
+%     HONORS AND AWARDS
 % ============================================================
 
 \section{Honors and Awards}
 \vspace{1pt}
 \begin{itemize}
-\item{\textbf{[Award Name]} -- [Event/Organization] ([Year]).}
+\item{\textbf{VII Certamen Regional de Bandas}.}
+\item{\textbf{Beca Chillida}.}
 \end{itemize}
 
 % ============================================================
