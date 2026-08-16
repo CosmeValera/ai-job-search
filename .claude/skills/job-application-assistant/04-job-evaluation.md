@@ -103,7 +103,25 @@ Relocation is the **goal**, not a deal-breaker. The candidate currently lives in
 | **FAIL** | Madrid or anywhere in Spain | The candidate is explicitly not seeking roles in Spain. |
 | **FAIL** | Outside the EU/EEA/Switzerland | Ignore; not being pursued. Historical UK and Singapore rows in the tracker predate this focus. |
 
-**Milan outranks Berlin.** At equal compensation, prefer Milan (personal reasons). Berlin wins only when Milan has no comparable offer, or when the Berlin offer is substantially higher.
+**Milan outranks Berlin, but not at any price.** The Milan preference is personal (a close personal tie in the city) and it is real, but the candidate weighs it against money rather than above money. Apply this order:
+
+| Situation | Choice |
+|---|---|
+| Milan and Berlin offers within roughly the same band | **Milan** |
+| Milan moderately below Berlin | **Milan**, unless something else is wrong with it |
+| Milan far below Berlin | **Berlin.** Take the money, visit Milan. |
+| Only one city has an offer | That city |
+
+There is **no fixed threshold** where the preference flips, and none should be invented. The candidate's "40K Milan vs 60K Berlin" was an illustration of the principle, not a rule to apply literally — asked about a narrower 40K/55K gap, their own answer was "case by case". Present the comparison and let the candidate decide; both the money and the Milan tie carry real weight, and the trade-off is theirs to make each time.
+
+**Remote policy is a first-class factor in this trade-off, not a perk.** The Milan preference is about being able to spend time with a specific person there, so anything that buys physical flexibility partly substitutes for the city itself. When comparing offers, always surface:
+- Remote or hybrid days per week, and whether they are policy or manager's discretion
+- Work-from-abroad / "work from anywhere" allowances (Doctolib's 10 days a year, Flix's 60 days, SumUp's sabbatical — these vary enormously and are usually buried in the benefits list)
+- Fully remote EU roles, which sidestep the choice entirely
+
+A well-paid Berlin role with generous work-from-abroad days can beat a poorly-paid Milan role *on the Milan criterion itself*. Say so explicitly when it applies.
+
+Compare **net, not gross**, before calling any gap large - see the tax note under Salary bands.
 
 **Work eligibility:** Spanish national, so an EU citizen. Every Ideal and Tier 2 location except Switzerland requires no sponsorship. Do not spend evaluation effort on visa questions for EU roles, and never treat a "no sponsorship available" line as a blocker for them.
 
@@ -133,14 +151,28 @@ Does this role advance career goals and contain tasks that energize?
 
 **Life situation alignment:**
 - **Security**: Currently employed at GMV, so there is no urgency. This is a search for a better role, not a search under pressure. A weak offer can be declined.
-- **Salary bands** (from the candidate's own tracker legend, confirmed during setup):
+- **Current compensation: 37.5K € gross at GMV (Madrid).** This is the number every offer is measured against, and it is the reason a 40K Milan offer is not attractive: it barely clears the status quo while adding relocation cost. **Never write this figure into a CV, cover letter, or any outbound message** - it is an internal evaluation input only.
+- **Salary bands** (revised by the candidate 2026-08-16):
 
-  | City | Acceptable | Target |
-  |---|---|---|
-  | Milan | 45-50K € | 48-50K €+ |
-  | Berlin | 50-60K € | 55-60K €+ |
+  | City | Stated floor (the anchor) | Target | Stretch-down |
+  |---|---|---|---|
+  | Milan | 45K € | 45-50K €, ideally 48-50K €+ | 41-45K € occasionally, to widen the funnel |
+  | Berlin | 50K € | 50-60K €, ideally 55-60K €+ | none |
+
+  **The 45K Milan anchor is a negotiating position, not a filter.** Always ask for 45K in Milan even when the posting's stated maximum is below it - the candidate did exactly this at AS Watson (stated max 41K) as a deliberate stretch, on the reasoning that no offer is lost by asking. Applying to a 41-45K Milan posting is allowed and sometimes right; quoting a number below 45K first is not.
 
   Below the acceptable floor, flag the posting explicitly rather than dropping it. Do not treat an unstated salary as a failure - most postings omit it.
+
+- **Compare net, not gross, across the two cities.** A Milan gross figure and a Berlin gross figure are not comparable numbers. Two structural reasons:
+  - Italian contracts commonly pay **13 or 14 monthly instalments**, so an Italian "annual" figure quoted per-month differs from the German convention.
+  - Italy's **inbound-worker tax regime** (*regime impatriati*) exempts a large share of employment income from tax for several years for workers who move their tax residence to Italy and meet the conditions. The 2024 reform reduced the exemption and tightened eligibility, so the current rules must be checked rather than assumed. If it applies, it can move a Milan net figure much closer to a higher Berlin gross than the raw numbers suggest.
+
+  **Full detail, eligibility analysis, risks and the pre-signing checklist live in `10-italy-tax-regime.md`.** The candidate believes they qualify via the ICT-experience route, but that assessment came from an AI chatbot and has not been checked by an Italian accountant, so it is recorded there as unverified. Three things carry into every Milan evaluation:
+  - The regime is **self-declared**, so an error surfaces years later as a repayment demand, not as a rejected application.
+  - It carries a **4-year Italian tax residence lock-in**. Leaving early means repaying the whole benefit with interest. Since the reason Milan ranks first is one personal tie, always surface this as a two-sided factor: it improves a good Milan offer and it makes a bad Milan situation expensive to exit.
+  - Tax residence needs >183 days in a calendar year, so a second-half move usually pushes the benefit and the clock to the following January. **Start date is negotiable and worth negotiating** when an offer lands late in the year.
+
+  **Treat this as a question to verify with the employer or an Italian accountant before comparing offers - never as a settled fact in the candidate's favour, and never as a reason to accept a low Milan gross on its own.** The gross is what survives if the regime does not apply, what the next employer anchors on, and what the pension is built from. Never quote a net-with-regime figure to an employer or write one into any document.
 - **Flexibility**: *(not yet captured)*
 - **Professional development**: *(not yet captured)*
 

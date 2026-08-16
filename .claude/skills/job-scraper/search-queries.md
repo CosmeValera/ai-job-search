@@ -103,12 +103,14 @@ Relocation is the goal, not an obstacle. Cosme is an EU citizen, so no sponsorsh
 
 ## Salary Filter
 
-| City | Acceptable | Target |
-|---|---|---|
-| Milan | 45-50K € | 48-50K €+ |
-| Berlin | 50-60K € | 55-60K €+ |
+| City | Floor (the anchor to ask for) | Target | Surface anyway |
+|---|---|---|---|
+| Milan | 45K € | 45-50K €, ideally 48-50K €+ | 41-45K € — worth surfacing, marked as below floor |
+| Berlin | 50K € | 50-60K €, ideally 55-60K €+ | — |
 
-Flag postings below the acceptable floor rather than dropping them. Most postings state no salary at all — that is not a reason to exclude.
+Milan's stated market reality: most mid-level frontend postings that name a number land at 28-47K €. So in Milan, **surface 41-45K € postings and label them**, rather than dropping them — the funnel is otherwise too thin. Below ~40K € is not worth surfacing: current comp is 37.5K € gross, so those are not a move.
+
+Flag postings below the floor rather than dropping them. Most postings state no salary at all — that is not a reason to exclude.
 
 ## Language Filter
 

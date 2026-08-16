@@ -84,7 +84,7 @@ No formal assessment on file. Inferred signals only, detailed in `02-behavioral-
 ### Deal-breakers
 - Roles in Madrid or anywhere in Spain
 - Roles requiring Italian or German as a working language
-- Compensation below 45K € in Milan or below 50K € in Berlin, without a strong compensating reason
+- Compensation below 50K € in Berlin. In Milan the reference floor is 45K € and that is the number to ask for, but 41-45K € postings may be applied to selectively to widen the funnel (current comp is 37.5K € gross, so anything near 40K is barely a move). Milan is preferred over Berlin at comparable pay; a large enough gap flips it to Berlin — see the location tier table in `04-job-evaluation.md`
 
 ## Repo Structure
 - `cv/` - LaTeX CV variants (moderncv template, banking style)
