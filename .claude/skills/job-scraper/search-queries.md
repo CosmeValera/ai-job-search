@@ -97,7 +97,16 @@ Relocation is the goal, not an obstacle. Cosme is an EU citizen, so no sponsorsh
 |---|---|---|
 | **Ideal** | **Milan** (first choice), **Berlin** | Full score. Milan outranks Berlin at equal compensation. |
 | **Tier 2** | Dublin, Amsterdam, Munich, Luxembourg, Zurich, Geneva | Surface, rank below the Ideal tier. Included because they pay well, not because they are preferred. Switzerland needs a permit; the rest do not. |
+| **Tier 3 (Italy)** | **Turin** | The only Italian secondary market with real depth (Qualcomm/Arduino, TeamSystem, Accessiway, Zucchetti, Reply). Surface it. |
 | **Remote** | Fully remote within the EU | Surface, treat as acceptable. |
+
+**Milan satellite cities are a dead lane — checked 2026-08-16, do not re-run.** Searches on Bergamo, Como,
+Monza, Novara and Piacenza returned *zero* locally-posted roles; LinkedIn silently falls back to Milan
+results when a location has no matches, so a full-looking result set there is an artefact, not a finding.
+Brescia and the Emilia belt (Parma, Reggio Emilia, Modena) do have local postings, but they are Italian SMEs
+and consultancies: Italian-language postings, .NET/C# stacks, 28-50K € with most under 45K €. One exception
+worth remembering — eGlue (Reggio Emilia) posted up to 50K € for a React role. Reggio Emilia is ~1h40 from
+Milan, so treat the Emilia belt as its own location, never as a Milan commute.
 | **Exclude** | Madrid and all of Spain | Hard exclude. |
 | **Exclude** | UK, US, Singapore, anywhere outside the EU/EEA/Switzerland | Hard exclude. The UK rows in the historical tracker predate this focus and needed sponsorship. |
 
@@ -117,6 +126,25 @@ Milan's market reality, corrected 2026-08-16 against postings that actually name
 - **Product companies and international employers** clear the floor comfortably: TeamSystem 53-66K €,
   Alpitronic from 64K €, Facile.it 45-60K €, Callimacus 45-55K €, plus the candidate's own tracker
   evidence (Satispay 50K €, Lexroom ~45K €).
+
+### The full-stack title premium (found 2026-08-16, act on this)
+
+TeamSystem posted two roles in the same week, both open to Milan, both hybrid, both English C1:
+
+| Posting | Experience asked | Total compensation | Wellbeing wallet |
+|---|---|---|---|
+| Full-stack Engineer — Node.js & React (4376718721) | 5 yrs | **53-66K €** | 3.850 €/yr |
+| Frontend Developer (4439991999) | 3 yrs | **33-37K €** | 350 €/yr |
+
+Same employer, same cities, same language bar. The ~20K € gap tracks the **title and scope**, not location,
+not seniority — the cheaper role is the one asking *fewer* years. Corroborated across the market: Accessiway's
+*Fullstack* role is 30-45K €, while pure-frontend consultancy postings sit at 30-40K €.
+
+**Consequence for searching:** query `full stack`, `fullstack`, `software engineer` and `product engineer`
+at least as hard as `frontend`. A pure "Frontend Developer" title in Italy is structurally underpaid
+regardless of employer quality. The candidate's profile genuinely supports the full-stack framing — Node and
+Java/Spring backend contributions at GMV, plus Docker/Kubernetes/Helm/Jenkins — so this is a reframing of
+real experience, not a stretch. Do not narrow Italian searches to frontend titles.
 
 So **45K € is mid-band for Milan, not the ceiling** — an earlier read of this file put the Milan top near
 47K € and that was too pessimistic, drawn from a consultancy-heavy sample. Weight searches toward product
