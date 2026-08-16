@@ -108,7 +108,22 @@ Relocation is the goal, not an obstacle. Cosme is an EU citizen, so no sponsorsh
 | Milan | 45K € | 45-50K €, ideally 48-50K €+ | 41-45K € — worth surfacing, marked as below floor |
 | Berlin | 50K € | 50-60K €, ideally 55-60K €+ | — |
 
-Milan's stated market reality: most mid-level frontend postings that name a number land at 28-47K €. So in Milan, **surface 41-45K € postings and label them**, rather than dropping them — the funnel is otherwise too thin. Below ~40K € is not worth surfacing: current comp is 37.5K € gross, so those are not a move.
+Milan's market reality, corrected 2026-08-16 against postings that actually name a number: the band is
+**bimodal, and which mode a posting sits in is predicted by the employer type, not by the role title.**
+
+- **Italian consultancies and staffing agencies** (Fincons, TXT, Teoresi, Akkodis, aizoOn, ADENTIS, KeyBiz,
+  Softlab, Hays, ACTION ICT) cluster at **30-45K €** and top out at or just under the floor. This is the
+  lane that produced the old "28-47K €" read.
+- **Product companies and international employers** clear the floor comfortably: TeamSystem 53-66K €,
+  Alpitronic from 64K €, Facile.it 45-60K €, Callimacus 45-55K €, plus the candidate's own tracker
+  evidence (Satispay 50K €, Lexroom ~45K €).
+
+So **45K € is mid-band for Milan, not the ceiling** — an earlier read of this file put the Milan top near
+47K € and that was too pessimistic, drawn from a consultancy-heavy sample. Weight searches toward product
+companies and international employers with Milan offices; the consultancy lane is high-volume, low-yield and
+also where the Italian-language requirements concentrate. Still **surface 41-45K € postings and label them**
+rather than dropping them. Below ~40K € is not worth surfacing: current comp is 37.5K € gross, so those are
+not a move.
 
 Flag postings below the floor rather than dropping them. Most postings state no salary at all — that is not a reason to exclude.
 
