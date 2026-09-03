@@ -153,6 +153,27 @@ also where the Italian-language requirements concentrate. Still **surface 41-45K
 rather than dropping them. Below ~40K € is not worth surfacing: current comp is 37.5K € gross, so those are
 not a move.
 
+### Berlin's floor is set too low — corrected 2026-08-16
+
+The 50K € Berlin floor above was set before any Berlin posting with a published number had been seen. Two
+independent ones have now turned up, both well-funded product startups, both Berlin:
+
+| Posting | Band | Note |
+|---|---|---|
+| Almedia — Frontend | **80-140K €** | declined by candidate: 7+ yrs required |
+| Buena — Senior Software Engineer | **80-120K € base** + virtual stock options | **no years requirement stated at all** |
+
+So Berlin is bimodal the same way Milan is, but the split runs **funded-product-startup vs everything else**, and
+the upper mode is far higher than the Milan equivalent: Berlin tops around **80-140K**, Milan around **53-66K**
+(and the Milan figure includes variable, while Buena's is base). Treat 50K as the *exclusion* threshold, not the
+target — surfacing a 50-60K Berlin role as a good outcome understates what the top of that market pays.
+
+**This matters for the city decision.** `04-job-evaluation.md` ranks Milan above Berlin at equal compensation and
+deliberately fixes no flip-threshold. Nothing here changes that rule — but the candidate's own stated condition
+for choosing Berlin was a *substantially* higher offer, and an 80K+ base against a 53-66K Milan ceiling is that
+condition being met on paper. Surface the gap as evidence when both cities produce offers; never treat it as
+having decided anything on its own.
+
 Flag postings below the floor rather than dropping them. Most postings state no salary at all — that is not a reason to exclude.
 
 ## Language Filter

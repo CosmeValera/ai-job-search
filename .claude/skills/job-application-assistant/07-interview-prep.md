@@ -6,6 +6,11 @@ framework_version: 1.0.0
 
 <!-- SETUP: STAR examples are personalized by running /setup based on your actual experience -->
 
+> **Read `tips/README.md` first when preparing for any interview.** This file is the generic
+> framework; `tips/` holds the lessons earned from interviews that actually happened, plus a
+> pre-interview checklist. After every interview, write a postmortem to `tips/postmortems/`
+> named `YYYY-MM-DD-<company>.md` and fold any new lesson into `tips/README.md`.
+
 ## STAR Format
 
 Structure answers as: **Situation** (context), **Task** (your responsibility), **Action** (what you did), **Result** (outcome).
