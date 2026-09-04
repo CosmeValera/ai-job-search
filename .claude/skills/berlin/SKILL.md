@@ -96,23 +96,58 @@ Everything fetched still goes into `seen_jobs.json` per Step 4 — the results t
 
 ## Output
 
-Exactly these five columns, in this order, every run:
+**One ranked table, best row first.** Exactly these six columns, in this order, every run. **URL is always last.**
 
-| Company | Position | Salary | URL | Notes |
-|---|---|---|---|---|
+| Company | Position | Salary | Location | Fit | URL |
+|---|---|---|---|---|---|
 
-- **Salary** — verbatim from the posting when stated (`80-120K € base + VSOP`). When the posting states nothing, write `not stated`. **Never estimate, infer, or carry a market range into this column.** Most postings name no number; that is normal, not a gap to fill.
-- **Notes** — **20 words maximum**, hard cap. Spend them on the single highest-value signal, in this priority order: hard gate failure → below-floor salary → **remote / work-from-abroad terms** → the one concrete reason this is a strong match. Not a summary of the posting.
+- **Salary** — verbatim from the posting when stated (`80-120K € base + VSOP`). When the posting states nothing, write `not stated`. **Never estimate, infer, or carry a market range into this column.** Most postings name no number; that is normal, but per `04-job-evaluation.md` dimension 6 it is no longer free — `not stated` scores 40.
+- **Location** — `Berlin`, `Berlin hybrid`, `remote DE`, `remote EU`. The Override 4 flexibility finding gets its own **Flexibility** table below; do not try to cram days-per-week into this cell.
+- **Fit** — how well the posting matches *this* profile, on the `04-job-evaluation.md` bands: `Strong` (75+), `Good` (60-74), `Moderate` (45-59), `Weak` (30-44), `Poor` (<30). See the shared rules below.
 
-The flexibility finding from Override 4 lives in the Notes cell (`3 days remote, 60 days work-from-abroad`) — it is a decision input here, not a perk, so it outranks generic match commentary for the word budget. It does not get its own column.
+### Keep every cell short — the terminal reflows wide tables
+
+A markdown table wider than the user's terminal is re-rendered as `Key: value` blocks, one stacked paragraph per row. It stops being a table.
+
+| Rule | Detail |
+|---|---|
+| **Hard cap: 40 characters per cell** | Shorten titles (`Software Engineer - Frontend` → `Frontend Engineer`), drop legal suffixes (`GmbH`, `SE`). |
+| **No quoted evidence in the ranked table** | Posting quotes belong in the Gate failures table. Long quotes are what blows the width. |
+| **URL cell is the literal word `link`** | `[link](url)`, never the full URL as visible text. |
+| **Split before you widen** | A seventh field means a second narrow table keyed on Company — never an extra column. |
+
+### Ordering — fit, salary and location together
+
+Per `04-job-evaluation.md`'s **Shortlist ordering** section, which is authoritative. Row 1 is the posting to apply to first, not the highest raw score.
+
+| # | Key | Detail |
+|---|---|---|
+| 1 | **Actionability** | Clears the 50K Berlin floor > not stated > below floor. Berlin publishes salary rarely, so this key does real work here: it stops four unpriced postings owning the top of every run. |
+| 2 | **Weighted score** | The six dimensions, Compensation included at 20%. |
+| 3 | **Location preference** | Berlin office > hybrid > remote DE > remote EU, as a tiebreak only. Note this runs opposite to Override 4's logic — flexibility substitutes for *Milan*, not for Berlin, so in a Berlin-only run the physical role is the more valuable one. |
+| 4 | **Language gate clean** | PASS outranks ⚠ FLAG at equal standing. |
+
+Number rows `1.`, `2.`, `3.` … in the Company cell. **Length is whatever the run justifies** — the old "top 10" was a cap, not a target. Never pad to a round number, never truncate a qualifying posting to stay under one.
+
+### The Fit column
+
+| Rule | Meaning |
+|---|---|
+| **Same bands as `/rank`** | Score on `04-job-evaluation.md`'s six weighted dimensions — Technical 24%, Experience 20%, Behavioral 12%, Career Alignment 24%, **Compensation 20%** — and map to its verdict bands. A search run and a `/rank` run must never disagree about the same posting. |
+| **Word, not number** | Write `Strong`, `Good`, `Moderate`, `Weak`, `Poor`. The underlying number is a triage estimate from posting text alone; publishing it implies a precision this pass does not have. `/rank` is where numbers belong. |
+| **Fetched text only** | A posting whose detail was never retrieved gets `unscored`. Never infer fit from a job title. |
+| **Gates override the band** | The German gate is the common case in Berlin: a job-condition German requirement is `Poor` regardless of stack match, with the German quoted in Notes. FLAG → keep the band, append `⚠`. |
+| **Seniority is scored, not vetoed** | A Senior or Staff title with a years bar above the profile's ~4 lowers the Experience dimension — it does not zero the row. Buena stated no years requirement at 80-120K; self-selecting out on title alone is how that lane gets missed. |
+| **Fit includes pay** | Added 2026-09-04. Compensation is dimension 6 at 20%, so an unpriced Berlin posting genuinely scores lower than an equivalent one publishing 80-120K. It is no longer a Notes-only annotation. |
+| **Sorts the table** | One table, ordered by the four keys in the Ordering section above. The reader should be able to stop after row 3. |
 
 Header line:
 
 ```
 ## New Berlin Matches - YYYY-MM-DD
-Top 10 of N new positions. Scope: Berlin.
+K of N new positions, best first. Scope: Berlin.
 Excluded: positions applied to since <cutoff YYYY-MM-DD> (12-month cooldown).
-(N-10 lower-fit results stored, not shown.)
+(N-K lower-fit results stored, not shown.)
 ```
 
 Keep the `skipped (disabled):` and `health:` lines from Step 5 when they apply. High-match highlights and the Step 4.5 contact links follow the table for the top results only.
@@ -140,5 +175,5 @@ Rules holding across all of them:
 |---|---|
 | **Quote, do not summarise** | Any cell asserting what a posting requires carries the posting's own words in quotes. A paraphrased gate failure is not a gate failure. |
 | **One fact per row** | Two gates failed at one company is two rows, not one cell holding both. |
-| **No word cap** | The 20-word Notes cap is the position table only. These tables exist to carry the detail that cap forced out. |
+| **No width cap** | The 40-character cell cap is the ranked position table only. These tables carry the detail that cap forced out — quoted posting text belongs here. Still keep them under terminal width; split into two keyed tables rather than running one wide. |
 | **Empty means omitted** | A section with no rows disappears. Never emit an empty table or a "none found" placeholder row. |

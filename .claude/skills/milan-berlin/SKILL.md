@@ -86,27 +86,62 @@ Everything fetched still goes into `seen_jobs.json` per Step 4 — results outsi
 
 ## Output
 
-Two tables, Milan first (it is first choice), then Berlin. Both use **exactly these five columns, in this order**, every run:
+**One ranked table across both cities, best row first.** Not one table per city — that was the format until 2026-09-04 and it was wrong: splitting by city put weak Milan rows above strong Berlin ones and forced the reader to re-merge the lists in their head. City now lives in the Location column, and the Milan-first preference is applied as an ordering tiebreak, not as a grouping.
 
-| Company | Position | Salary | URL | Notes |
-|---|---|---|---|---|
+Exactly these six columns, in this order, every run. **URL is always last.**
 
-- **Salary** — verbatim from the posting when stated (`45-55K €`, `80-120K € base + VSOP`). When the posting states nothing, write `not stated`. **Never estimate, infer, or carry a market range into this column.** Most postings name no number; that is normal, not a gap to fill. Do not normalise Italian and German figures against each other here — the net-vs-gross comparison belongs in the City Comparison block, not in a table cell.
-- **Notes** — **20 words maximum**, hard cap. Spend them on the single highest-value signal, in this priority order: hard gate failure → `re-apply, last <YYYY-MM>` → below-floor salary → city-specific signal (`Ring 1 (<city>)` for Milan, remote / work-from-abroad terms for Berlin) → the one concrete reason this is a strong match. Not a summary of the posting.
+| Company | Position | Salary | Location | Fit | URL |
+|---|---|---|---|---|---|
 
-Ring and remote findings live inside the Notes budget. Neither gets its own column — the five-column schema is fixed across all three city skills.
+- **Salary** — verbatim from the posting when stated (`45-55K €`, `80-120K € base + VSOP`). When the posting states nothing, write `not stated`. **Never estimate, infer, or carry a market range into this column.** Do not normalise Italian and German figures against each other here — the net-vs-gross comparison belongs in the City Comparison table, not in a table cell.
+- **Location** — `Milan`, `Berlin`, `Como (Ring 1)`, `Berlin hybrid`, `remote EU`. Replaces the old `Ring 1 (<city>)` note suffix.
+- **Fit** — how well the posting matches *this* profile, on the `04-job-evaluation.md` bands: `Strong` (75+), `Good` (60-74), `Moderate` (45-59), `Weak` (30-44), `Poor` (<30). See the shared rules below.
+
+### Keep every cell short — the terminal reflows wide tables
+
+A markdown table wider than the user's terminal is re-rendered as `Key: value` blocks, one stacked paragraph per row. It stops being a table.
+
+| Rule | Detail |
+|---|---|
+| **Hard cap: 40 characters per cell** | Shorten titles (`Software Engineer - Frontend` → `Frontend Engineer`), drop legal suffixes (`GmbH`, `S.p.A.`). |
+| **No quoted evidence in the ranked table** | Italian and German posting quotes belong in the Gate failures table. Long quotes are what blows the width. |
+| **URL cell is the literal word `link`** | `[link](url)`, never the full URL as visible text. |
+| **Split before you widen** | A seventh field means a second narrow table keyed on Company — never an extra column. |
+
+### Ordering — fit, salary and location together
+
+Per `04-job-evaluation.md`'s **Shortlist ordering** section, which is authoritative. Row 1 is the posting to apply to first, not the highest raw score.
+
+| # | Key | Detail |
+|---|---|---|
+| 1 | **Actionability** | Clears its city floor (Milan 45K, Berlin 50K) > not stated > below floor. Berlin publishes salary far less often than Milan, so this key stops unpriced Berlin postings owning the top of every run. |
+| 2 | **Weighted score** | The six dimensions, Compensation included at 20%. |
+| 3 | **Location preference** | Milan / Ring 1 > Berlin, as a **tiebreak within a band only**. It reorders near-equal rows; it never lifts a Moderate Milan role above a Strong Berlin one. The full preference argument stays in the City Comparison table. |
+| 4 | **Language gate clean** | PASS outranks ⚠ FLAG at equal standing. |
+
+Number rows `1.`, `2.`, `3.` … in the Company cell. **Length is whatever the run justifies** — the old "top 10" was a cap, not a target. Never pad to a round number, never truncate a qualifying posting to stay under one. Keep the guarantee that each city gets at least 3 rows when it has 3 qualifying results.
+
+### The Fit column
+
+| Rule | Meaning |
+|---|---|
+| **Same bands as `/rank`** | Score on `04-job-evaluation.md`'s six weighted dimensions — Technical 24%, Experience 20%, Behavioral 12%, Career Alignment 24%, **Compensation 20%** — and map to its verdict bands. A search run and a `/rank` run must never disagree about the same posting. |
+| **Word, not number** | Write `Strong`, `Good`, `Moderate`, `Weak`, `Poor`. The underlying number is a triage estimate from posting text alone; publishing it implies a precision this pass does not have. `/rank` is where numbers belong. |
+| **Fetched text only** | A posting whose detail was never retrieved gets `unscored`. Never infer fit from a job title. |
+| **Gates override the band** | An Italian requirement in Milan or a German one in Berlin is `Poor` regardless of stack match, with the untranslated quote in Notes. FLAG → keep the band, append `⚠`. |
+| **One scale, both cities** | Fit measures match against the profile, nothing else. It never encodes the Milan-first preference — a Berlin role that fits better scores higher, and the city preference is applied afterwards as ordering key 3. Baking the preference into Fit would double-count it. |
+| **Fit includes pay** | Added 2026-09-04. Compensation is dimension 6 at 20%, so a below-floor or unpriced posting genuinely scores lower. It is no longer a Notes-only annotation, and it applies against each city's own floor. |
+| **Sorts the table** | One table, ordered by the four keys in the Ordering section above. No per-city sorting — city is a tiebreak, not a grouping. |
 
 ```
 ## New Matches - YYYY-MM-DD
-Top 10 of N new positions. Scope: Milan + Ring 1, Berlin.
+K of N new positions, best first. Scope: Milan + Ring 1, Berlin.
 Excluded: positions applied to since <cutoff YYYY-MM-DD> (12-month cooldown).
-(N-10 lower-fit results stored, not shown.)
+(N-K lower-fit results stored, not shown.)
 
-### Milan + Ring 1 (N found)
-| Company | Position | Salary | URL | Notes |
-
-### Berlin (N found)
-| Company | Position | Salary | URL | Notes |
+| Company | Position | Salary | Location | Fit | URL |
+|---|---|---|---|---|---|
+| 1. ... | ... | ... | ... | Strong | [link](...) |
 
 ### City Comparison
 (only when both cities produced strong results — the four bullets above, applied to
@@ -140,6 +175,6 @@ Rules holding across all of them:
 |---|---|
 | **Quote, do not summarise** | Any cell asserting what a posting requires carries the posting's own words in quotes. A paraphrased gate failure is not a gate failure. |
 | **One fact per row** | Two gates failed at one company is two rows, not one cell holding both. |
-| **No word cap** | The 20-word Notes cap is the position tables only. These tables exist to carry the detail that cap forced out. |
+| **No width cap** | The 40-character cell cap is the ranked position table only. These tables carry the detail that cap forced out — quoted Italian and German posting text belongs here. Still keep them under terminal width; split into two keyed tables rather than running one wide. |
 | **Empty means omitted** | A section with no rows disappears. Never emit an empty table or a "none found" placeholder row. |
 | **Never rank in a comparison table** | The City Comparison table states each city's position on a factor. It does not declare a winner — the Milan-first preference rules above do that, in the one line of prose this output allows. |

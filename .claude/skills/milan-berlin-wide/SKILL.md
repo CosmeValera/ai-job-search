@@ -100,44 +100,71 @@ Everything fetched still goes into `seen_jobs.json` per Step 4 — results outsi
 
 ## Output
 
-Three tables in preference order. All use **exactly these five columns, in this order**, every run:
+**One ranked table, best row first.** Not three tier tables — that was the format until 2026-09-04 and it was wrong: fragmenting by tier put weak Milan rows above strong Berlin ones and forced the reader to re-merge the lists in their head. Tier now lives in the Location column.
 
-| Company | Position | Salary | URL | Notes |
-|---|---|---|---|---|
+Exactly these six columns, in this order, every run. **URL is always last.**
 
-- **Salary** — verbatim from the posting when stated (`45-55K €`, `80-120K € base + VSOP`, `95K CHF`). When the posting states nothing, write `not stated`. **Never estimate, infer, or carry a market range into this column.** Keep the posting's own currency; do not convert. Do not normalise across countries here — net-vs-gross comparison belongs in the trade-off block, not a table cell.
-- **Notes** — **20 words maximum**, hard cap. Spend them on the single highest-value signal, in this priority order: hard gate failure → `re-apply, last <YYYY-MM>` → below-floor salary → tier-specific signal (`Ring 1 (<city>)`, remote / work-from-abroad terms, Ring 2 sector-match exception) → the one concrete reason this is a strong match. Not a summary of the posting.
+| Company | Position | Salary | Location | Fit | URL |
+|---|---|---|---|---|---|
 
-Ring, remote and tier findings live inside the Notes budget. None gets its own column — the five-column schema is fixed across all four city skills.
+- **Salary** — verbatim from the posting when stated (`45-55K €`, `80-120K € base + VSOP`, `95K CHF`). When the posting states nothing, write `not stated`. **Never estimate, infer, or carry a market range into this column.** Keep the posting's own currency; do not convert. Do not normalise across countries here — net-vs-gross comparison belongs in the trade-off table, not a table cell.
+- **Location** — city, plus the tier when it is not Ideal: `Milan`, `Como (Ring 1)`, `Turin (Ring 2)`, `Dublin (Tier 2)`, `remote EU`. Berlin and Milan need no tier suffix.
+- **Fit** — how well the posting matches *this* profile, on the `04-job-evaluation.md` bands: `Strong` (75+), `Good` (60-74), `Moderate` (45-59), `Weak` (30-44), `Poor` (<30). See the shared rules below.
+
+### Keep every cell short — the terminal reflows wide tables
+
+A markdown table wider than the user's terminal is re-rendered as `Key: value` blocks, one stacked paragraph per row. It stops being a table. This has happened and it is the single most common way this skill's output fails.
+
+| Rule | Detail |
+|---|---|
+| **Hard cap: 40 characters per cell** | Company and Position included. Shorten titles (`Software Engineer - Frontend` → `Frontend Engineer`), drop legal suffixes (`GmbH`, `S.p.A.`). |
+| **No quoted evidence in the ranked table** | Posting quotes go in the Gate failures table below, never in a cell of the main table. Long quotes are what blows the width. |
+| **URL cell is the literal word `link`** | `[link](url)`, never the full URL as visible text. |
+| **Split before you widen** | If a seventh field is genuinely needed, emit a second narrow table keyed on Company — never add a column. |
+
+### Ordering — fit, salary and location together
+
+Per `04-job-evaluation.md`'s **Shortlist ordering** section, which is authoritative. Row 1 is the posting the candidate should be most eager to apply to, not the highest raw score.
+
+| # | Key | Detail |
+|---|---|---|
+| 1 | **Actionability** | Pay clears its tier floor > pay not stated > pay below floor. A posting nobody can price does not lead the list, however well it matches. |
+| 2 | **Weighted score** | The six dimensions in `04-job-evaluation.md`, Compensation included at 20%. |
+| 3 | **Location preference** | Milan / Ring 1 > Berlin > Ring 2 > Tier 2 > remote EU. **Tiebreak within a band, never a grouping** — it reorders near-equal rows, it never lifts a Moderate Milan role above a Strong Berlin one. |
+| 4 | **Language gate clean** | PASS outranks ⚠ FLAG at equal standing. |
+
+Number the rows `1.`, `2.`, `3.` … in the Company cell so the follow-up prompt ("give me the number(s)") is unambiguous.
+
+**Length is whatever the run justifies.** The old "top 15" was a cap, not a target — 13 or 18 is equally fine. Never pad to a round number, never truncate a genuinely qualifying posting to stay under one. Keep the guarantee that Milan+Ring 1 and Berlin each get at least 3 rows when they have 3 qualifying results.
+
+### The Fit column
+
+| Rule | Meaning |
+|---|---|
+| **Same bands as `/rank`** | Score on `04-job-evaluation.md`'s six weighted dimensions — Technical 24%, Experience 20%, Behavioral 12%, Career Alignment 24%, **Compensation 20%** — and map to its verdict bands. A search run and a `/rank` run must never disagree about the same posting. |
+| **Word, not number** | Write `Strong`, `Good`, `Moderate`, `Weak`, `Poor`. The underlying number is a triage estimate from posting text alone; publishing it implies a precision this pass does not have. `/rank` is where numbers belong. |
+| **Fetched text only** | A posting whose detail was never retrieved gets `unscored`. Never infer fit from a job title. |
+| **Gates override the band** | A job-condition Italian requirement in any Italian tier, or German in Berlin, Munich, Zurich or Bolzano, is `Poor` regardless of stack match, with the untranslated quote in Notes. A French requirement in Geneva or Luxembourg is a FLAG against the declared B1 — keep the band, append `⚠`. |
+| **Fit is not tier** | Fit never encodes the tier preference — a Ring 2 or Tier 2 role that matches better scores higher. Location preference is applied afterwards, as ordering key 3. Baking tier into Fit would double-count it and make the wider net look worse than it is. |
+| **Fit does include pay** | Changed 2026-09-04. Compensation is dimension 6 at 20%, so a below-floor or unpriced posting genuinely scores lower — it is no longer a Notes-only annotation. A posting under its floor is *also* flagged in the Gate failures table, so the reader can still tell match-problem from money-problem apart. |
+| **Sorts the table** | One table, ordered by the four keys in the Ordering section above. No per-tier sorting — tier is a tiebreak, not a grouping. |
 
 ```
 ## New Matches (wide) - YYYY-MM-DD
-Top 15 of N new positions. Scope: Milan + Ring 1, Berlin, Ring 2, Tier 2, remote EU.
+K of N new positions, best first. Scope: Milan + Ring 1, Berlin, Ring 2, Tier 2, remote EU.
 Excluded: positions applied to since <cutoff YYYY-MM-DD> (12-month cooldown) - M filtered.
-(N-15 lower-fit results stored, not shown.)
+(N-K lower-fit results stored, not shown.)
 
-### Milan + Ring 1 (N found)
-| Company | Position | Salary | URL | Notes |
-
-### Berlin (N found)
-| Company | Position | Salary | URL | Notes |
-
-### Wider net — Ring 2 / Tier 2 / remote EU (N found)
-| Company | Position | Salary | URL | Notes |
-(add the tier to each Notes cell: "Ring 2 Turin", "Tier 2 Amsterdam", "remote EU")
-
-### Trade-off
-(only when the wider net produced something genuinely competitive against a preferred
-city — otherwise omit. Never present the wider tiers as equivalent to Milan or Berlin.)
+| Company | Position | Salary | Location | Fit | URL |
+|---|---|---|---|---|---|
+| 1. ... | ... | ... | ... | Strong | [link](...) |
 ```
 
-Number the rows in a **single continuous sequence across all three tables** — prefix the Company cell (`1. Satispay`) rather than adding a sixth column — so the follow-up prompt ("give me the number(s)") stays unambiguous.
-
-Keep the `skipped (disabled):` and `health:` lines from Step 5 when they apply. High-match highlights and the Step 4.5 contact links follow the tables, for the shortlisted results only.
+Keep the `skipped (disabled):` and `health:` lines from Step 5 when they apply. High-match highlights and the Step 4.5 contact links follow the table, for the top results only.
 
 ### Everything is a table — no prose blocks
 
-The three position tables are not the only tables. **Every section of the output is a table**, the analysis included. The Trade-off block is a table, not paragraphs. Prose is reserved for a single closing caveat where tabulating would misrepresent the finding — never for findings themselves, never for comparison, never for reasoning about a specific posting.
+The ranked position table is not the only table. **Every section of the output is a table**, the analysis included. The Trade-off block is a table, not paragraphs. Prose is reserved for a single closing caveat where tabulating would misrepresent the finding — never for findings themselves, never for comparison, never for reasoning about a specific posting.
 
 This matters most here: the wide sweep produces the most analysis of any city skill, so it is the one most likely to drift back into paragraphs. It must not.
 
@@ -158,7 +185,7 @@ Rules holding across all of them:
 |---|---|
 | **Quote, do not summarise** | Any cell asserting what a posting requires carries the posting's own words in quotes. A paraphrased gate failure is not a gate failure. |
 | **One fact per row** | Two gates failed at one company is two rows, not one cell holding both. |
-| **No word cap** | The 20-word Notes cap is the position tables only. These tables exist to carry the detail that cap forced out. |
+| **No width cap** | The 40-character cell cap is the ranked position table only. These tables exist to carry the detail that cap forced out — quoted posting text belongs here. Still keep them under the terminal width; split into two keyed tables rather than running one wide. |
 | **Empty means omitted** | A section with no rows disappears. Never emit an empty table or a "none found" placeholder row. |
 | **Never rank in the Trade-off table** | It states each tier's position on a factor. It does not declare a winner — the preference rules below do that, in the one line of prose this output allows. |
 

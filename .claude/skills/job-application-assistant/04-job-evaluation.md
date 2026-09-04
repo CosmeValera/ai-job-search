@@ -1,5 +1,5 @@
 ---
-framework_version: 1.4.0
+framework_version: 1.5.0
 ---
 
 # Job Evaluation Framework
@@ -48,7 +48,7 @@ Judge the level comparison the same way you judge everything else in this framew
 
 ## Scoring Dimensions
 
-Evaluate each job posting against these five dimensions:
+Evaluate each job posting against these six dimensions:
 
 ### 1. Technical Skills Match (0-100)
 How well do the required/preferred skills align with the candidate's capabilities?
@@ -231,7 +231,34 @@ Does this role advance career goals and contain tasks that energize?
 - **Flexibility**: *(not yet captured)*
 - **Professional development**: *(not yet captured)*
 
-### 6. Salary Benchmark (Optional)
+### 6. Compensation (0-100) — added 2026-09-04
+
+Scored, not just gated. Added at the candidate's direction after a `/rank` run put three postings with **no stated salary** in the top three positions: the four original dimensions contain no money term at all, so an unpriced posting could not lose a single point for being unpriced. That is backwards. A job whose pay cannot be checked against the floor is not more applyable than one that publishes a band clearing it by 30K.
+
+Score against **the floor for that posting's tier** (Milan / Ring 1 45K, Ring 2 48K, Berlin 50K, Tier 2 52K):
+
+| Posting's stated compensation | Score |
+|---|---|
+| Clears the tier floor by 20K € or more at the **bottom** of the band | 100 |
+| Clears the floor by 10K € or more at the bottom of the band | 85 |
+| Clears the floor across the **whole** band | 75 |
+| Straddles the floor — clears it only in the upper part of the band | 55 |
+| **Not stated** | 40 |
+| Entirely below the floor | 25 |
+
+**Why `not stated` scores 40 and not 50 or 60.** It sits below every band that actually clears the floor, and above one that is verifiably too low. An unpriced posting is not neutral — it is an unpaid research task handed to the candidate, and most of the historical tracker's 173 applications were exactly this. It should still be applyable when the fit is exceptional, which 40 permits: a posting scoring 90/90/85/90 on the other dimensions still lands at Strong Fit with a 40 here. It just cannot outrank a comparable posting that published a good number.
+
+Rules:
+
+| Rule | Detail |
+|---|---|
+| **Never estimate the band** | Score from the posting's own figure. A market estimate, a Glassdoor range or a guess from company stage is not a stated salary — it is `not stated`, 40. |
+| **Variable pay at half** | Same rule as everywhere else in this framework: test base + 50% of the variable, and show the arithmetic. |
+| **Equity is not salary** | "Competitive salary plus stock options" with no number is `not stated`. Note the equity separately; never let it lift the score. |
+| **Italian instalments** | An Italian RAL quoted over 13 or 14 instalments is still that RAL. Do not multiply it up. |
+| **The floor is the tier's, not Milan's** | A 49K Turin posting fails Ring 2's 48K... barely (55, straddling). The same 49K in Berlin is entirely below floor (25). Read the location first. |
+
+### 7. Salary Benchmark (Optional)
 
 If the salary lookup tool is configured (`salary_data.json` exists), look up the company:
 ```
@@ -265,8 +292,9 @@ Present the evaluation as:
 | Technical Skills | XX/100 | [brief note] |
 | Experience Match | XX/100 | [brief note] |
 | Behavioral Fit | XX/100 | [brief note] |
-| Location | PASS/FAIL | [brief note] |
 | Career Alignment | XX/100 | [brief note] |
+| Compensation | XX/100 | [stated band vs tier floor, or "not stated"] |
+| Location | PASS/FAIL | [brief note] |
 
 **Overall Score: XX/100** (weighted average of scored dimensions)
 
@@ -290,12 +318,35 @@ Present the evaluation as:
 ```
 
 ## Weighting
-- Technical Skills: 30%
-- Experience Match: 25%
-- Behavioral Fit: 15%
-- Career Alignment: 30%
 
-(Location is pass/fail, not weighted)
+Revised 2026-09-04 when Compensation was added. The four original weights were rescaled proportionally so their ratios to each other are unchanged — only the new dimension's 20% is new money.
+
+| Dimension | Weight | Was |
+|---|---|---|
+| Technical Skills | 24% | 30% |
+| Experience Match | 20% | 25% |
+| Behavioral Fit | 12% | 15% |
+| Career Alignment | 24% | 30% |
+| **Compensation** | **20%** | — |
+
+(Location is pass/fail, not weighted — but it orders the shortlist, see below)
+
+## Shortlist ordering — fit, pay and location together
+
+The weighted score answers "how good a match is this?". It does not answer "which should I open first?", and those are different questions. **Every shortlist this repo produces — `/rank`, `/milan`, `/berlin`, `/milan-berlin`, `/milan-berlin-wide` — is ordered top-to-bottom by how eager the candidate should be to apply**, never by raw score alone and never grouped so that a weak preferred-city role sits above a strong one elsewhere.
+
+Order by, in sequence:
+
+| # | Key | Detail |
+|---|---|---|
+| 1 | **Actionability** | A posting whose pay clears its tier floor outranks one whose pay is unknown, which outranks one below floor. This is already inside the Compensation dimension; it is restated here because it must survive into the ordering. |
+| 2 | **Weighted score** | The six-dimension total. |
+| 3 | **Location preference** | Milan / Ring 1 > Berlin > Ring 2 > Tier 2 > remote EU. Applies as a **tiebreak within a band**, not as a grouping — it reorders near-equal rows, it never lifts a Moderate Milan role above a Strong Berlin one. |
+| 4 | **Language gate clean** | A PASS outranks a ⚠ FLAG at equal standing. |
+
+**Do not emit tier-grouped tables as the primary output.** One ranked list, best first. Tier belongs in a Location column so the reader can see it without the list being fragmented by it. The candidate reads from the top and stops when they lose interest — that only works if row 1 is genuinely the row to apply to first.
+
+The shortlist length is whatever the run justifies. 10, 15 and 20 are illustrations, not fixed sizes; 13 or 18 is equally fine. Never pad to reach a round number and never truncate a genuinely qualifying posting to stay under one.
 
 ## Thresholds
 - **Strong Fit** (75+): Definitely apply, tailor everything
