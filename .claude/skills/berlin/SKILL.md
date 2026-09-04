@@ -118,3 +118,27 @@ Excluded: positions applied to since <cutoff YYYY-MM-DD> (12-month cooldown).
 Keep the `skipped (disabled):` and `health:` lines from Step 5 when they apply. High-match highlights and the Step 4.5 contact links follow the table for the top results only.
 
 If the run genuinely yields little, say so plainly and suggest `/milan-berlin` or `/scrape` — never pad the table with out-of-scope results to reach ten rows.
+
+### Everything is a table — no prose blocks
+
+The position table is not the only table. **Every section of the output is a table**, the analysis included. Prose is reserved for a single closing caveat where tabulating would misrepresent the finding — never for findings themselves, never for comparison, never for reasoning about a specific posting.
+
+Emit these after the position table, in this order, and only when they have rows:
+
+| Section | Columns | Emit when |
+|---|---|---|
+| **Gate failures and drops** | `Company \| Position \| Dropped on \| Evidence (quoted)` | Any posting failed a screen. `Dropped on` is one of: `Language gate`, `Below floor`, `Stack gap`, `Discipline gap`, `Seniority gap`, `Mass posting`. The German gate is the highest-volume row source in Berlin — quote the German text itself, untranslated, so the bar is auditable. |
+| **Flexibility** | `Company \| Position \| Office days \| Work-from-abroad \| Relocation support` | Two or more results stated remote or work-from-abroad terms. Per Override 4 this is a decision input, not a perk, so it gets its own table once the Notes cell runs out of room. |
+| **Trade-off** | `Factor \| <option A> \| <option B>` | Two or more results are genuinely competitive. One row per factor: top pay stated, best stack fit, language risk, salary transparency, seniority gap, employer type. |
+| **Framework corrections** | `File \| Current entry \| Evidence this run \| Change needed` | The run contradicted `04-job-evaluation.md` or `search-queries.md`. Do **not** edit those files from inside a search run — table the correction and let the user approve it. |
+| **Already surfaced, still unapplied** | `Company \| Position \| First seen \| Status \| Why still relevant` | `seen_jobs.json` dedup suppressed a posting still marked `new` that is still a strong match. |
+| **Run stats** | `Metric \| Count` | Always. Raw results, unique URLs, cooldown drops, seen_jobs drops, intra-run dupes, kept, detail-fetched, shortlisted, stored as skipped. |
+
+Rules holding across all of them:
+
+| Rule | Meaning |
+|---|---|
+| **Quote, do not summarise** | Any cell asserting what a posting requires carries the posting's own words in quotes. A paraphrased gate failure is not a gate failure. |
+| **One fact per row** | Two gates failed at one company is two rows, not one cell holding both. |
+| **No word cap** | The 20-word Notes cap is the position table only. These tables exist to carry the detail that cap forced out. |
+| **Empty means omitted** | A section with no rows disappears. Never emit an empty table or a "none found" placeholder row. |

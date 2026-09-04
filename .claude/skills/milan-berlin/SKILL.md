@@ -118,3 +118,28 @@ Number the rows in a **single continuous sequence across both tables** — prefi
 Keep the `skipped (disabled):` and `health:` lines from Step 5 when they apply. High-match highlights and the Step 4.5 contact links follow the tables, for the shortlisted results only.
 
 If the run yields 8+ new jobs, suggest `/rank` — it batch-scores everything against the full framework, which beats eyeballing two tables.
+
+### Everything is a table — no prose blocks
+
+The position tables are not the only tables. **Every section of the output is a table**, the analysis included. That covers the City Comparison block above: it is a table, not four bullets. Prose is reserved for a single closing caveat where tabulating would misrepresent the finding — never for findings themselves, never for comparison, never for reasoning about a specific posting.
+
+Emit these after the position tables, in this order, and only when they have rows:
+
+| Section | Columns | Emit when |
+|---|---|---|
+| **Gate failures and drops** | `Company \| Position \| City \| Dropped on \| Evidence (quoted)` | Any posting failed a screen. `Dropped on` is one of: `Language gate`, `Below floor`, `Stack gap`, `Discipline gap`, `Seniority gap`, `Mass posting`. Quote Italian and German text untranslated so the bar is auditable. |
+| **Ring 1 findings** | `Company \| Position \| Belt city \| Outcome` | Any Milan-pass result landed outside Milan proper. Records that the belt is reachable through wide Milan terms even when every belt result fails on merit — the Override 1 evidence trail. |
+| **City Comparison** | `Factor \| Milan + Ring 1 \| Berlin` | Both cities produced strong results. One row per factor: top pay stated, best stack fit, language risk, salary transparency, relocation support, remote / work-from-abroad. Omit entirely when one city came back empty. |
+| **Framework corrections** | `File \| Current entry \| Evidence this run \| Change needed` | The run contradicted `04-job-evaluation.md` or `search-queries.md`. Do **not** edit those files from inside a search run — table the correction and let the user approve it. |
+| **Already surfaced, still unapplied** | `Company \| Position \| First seen \| Status \| Why still relevant` | `seen_jobs.json` dedup suppressed a posting still marked `new` that is still a strong match. |
+| **Run stats** | `Metric \| Count` | Always. Raw results, unique URLs, cooldown drops, seen_jobs drops, intra-run dupes, kept, detail-fetched, shortlisted, stored as skipped. |
+
+Rules holding across all of them:
+
+| Rule | Meaning |
+|---|---|
+| **Quote, do not summarise** | Any cell asserting what a posting requires carries the posting's own words in quotes. A paraphrased gate failure is not a gate failure. |
+| **One fact per row** | Two gates failed at one company is two rows, not one cell holding both. |
+| **No word cap** | The 20-word Notes cap is the position tables only. These tables exist to carry the detail that cap forced out. |
+| **Empty means omitted** | A section with no rows disappears. Never emit an empty table or a "none found" placeholder row. |
+| **Never rank in a comparison table** | The City Comparison table states each city's position on a factor. It does not declare a winner — the Milan-first preference rules above do that, in the one line of prose this output allows. |

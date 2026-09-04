@@ -98,7 +98,7 @@ Relocation is the goal, not an obstacle. Cosme is an EU citizen, so no sponsorsh
 | **Ideal** | **Milan** (first choice), **Berlin** | Full score. Milan outranks Berlin at equal compensation. |
 | **Tier 2** | Dublin, Amsterdam, Munich, Luxembourg, Zurich, Geneva | Surface, rank below the Ideal tier. Included because they pay well, not because they are preferred. Switzerland needs a permit; the rest do not. |
 | **Ring 1 (Italy)** | Monza/Brianza, Bergamo, Como, Lecco, Varese, Novara, Pavia | Milan commuter belt, scored as Milan. **Do not search these by city name** — see the dead-lane note below. |
-| **Ring 2 (Italy)** | **Turin**, Genoa, Bologna, Verona, Trento, Bolzano | Separate labour markets, not Milan commutes. Conditional on 50K €+ or an exceptional sector match — see `04-job-evaluation.md`. Turin has the most depth (Qualcomm/Arduino, TeamSystem, Accessiway, Zucchetti, Reply) plus Italy's densest aerospace cluster, but typically pays below Milan. |
+| **Ring 2 (Italy)** | **Turin**, Genoa, Bologna, Verona, Trento, Bolzano | Separate labour markets, not Milan commutes. Conditional on 48K €+ or an exceptional sector match — see `04-job-evaluation.md`. Turin has the most depth (Qualcomm/Arduino, TeamSystem, Accessiway, Zucchetti, Reply) plus Italy's densest aerospace cluster. Its consultancies pay below Milan; its international product employers and funded startups do not — screen by employer type. |
 | **Remote** | Fully remote within the EU | Surface, treat as acceptable. |
 | **Exclude** | Madrid and all of Spain | Hard exclude. |
 | **Exclude** | UK, US, Singapore, anywhere outside the EU/EEA/Switzerland | Hard exclude. The UK rows in the historical tracker predate this focus and needed sponsorship. |
@@ -135,7 +135,7 @@ Milan's market reality, corrected 2026-08-16 against postings that actually name
   Softlab, Hays, ACTION ICT) cluster at **30-45K €** and top out at or just under the floor. This is the
   lane that produced the old "28-47K €" read.
 - **Product companies and international employers** clear the floor comfortably: TeamSystem 53-66K €,
-  Alpitronic from 64K €, Facile.it 45-60K €, Callimacus 45-55K €, plus the candidate's own tracker
+  Alpitronic UI role from 64K € total incl. 30% variable (expected ≈54K), Facile.it 45-60K €, Callimacus 45-55K €, plus the candidate's own tracker
   evidence (Satispay 50K €, Lexroom ~45K €).
 
 ### The full-stack title premium (found 2026-08-16, act on this)

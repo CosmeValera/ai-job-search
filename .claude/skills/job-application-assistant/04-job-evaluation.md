@@ -1,5 +1,5 @@
 ---
-framework_version: 1.3.0
+framework_version: 1.4.0
 ---
 
 # Job Evaluation Framework
@@ -99,7 +99,7 @@ Relocation is the **goal**, not a deal-breaker. The candidate currently lives in
 | **Ideal** | Milan, Italy | PASS, top priority |
 | **Ideal** | Berlin, Germany | PASS, top priority |
 | **Ring 1** | Milan commuter belt: Monza/Brianza, Bergamo, Como, Lecco, Varese, Novara, Pavia | PASS, **treat exactly as Milan** — same floor, same priority. See Ring 1 below. |
-| **Ring 2** | Northern Italy, separate labour markets: Turin, Genoa, Bologna, Verona, Trento, Bolzano/Bozen | **Conditional PASS at 50K € or above**, or on an exceptional sector match. See Ring 2 below. |
+| **Ring 2** | Northern Italy, separate labour markets: Turin, Genoa, Bologna, Verona, Trento, Bolzano/Bozen | **Conditional PASS at 48K € or above**, or on an exceptional sector match. See Ring 2 below. |
 | **Tier 2** | Dublin, Amsterdam, Munich, Luxembourg, Zurich/Geneva | PASS, surface but rank below Milan/Berlin. These qualify because they pay well, not because the candidate prefers them. |
 | **Remote** | Fully remote within the EU | PASS |
 | **FAIL** | Madrid or anywhere in Spain | The candidate is explicitly not seeking roles in Spain. |
@@ -121,22 +121,38 @@ Turin, Genoa, Bologna, Verona, Trento, Bolzano/Bozen. Moving to any of these mea
 
 | Situation | Verdict |
 |---|---|
-| 50K € or above | **PASS.** Surface it, rank alongside Milan. |
-| Below 50K €, but exceptional sector match (space, aerospace, defence, rail, geospatial) | **FLAG to the user with the trade-off stated.** Do not auto-pass and do not silently drop. |
-| Below 50K €, ordinary role | **FLAG as below floor**, consistent with the rest of this framework — never drop a posting silently. |
+| 48K € or above | **PASS.** Surface it, rank alongside Milan. |
+| Below 48K €, but exceptional sector match (space, aerospace, defence, rail, geospatial) | **FLAG to the user with the trade-off stated.** Do not auto-pass and do not silently drop. |
+| Below 48K €, ordinary role | **FLAG as below floor**, consistent with the rest of this framework — never drop a posting silently. |
+
+Floor lowered from 50K to **48K on 2026-09-04**, at the candidate's direction, to keep the tier realistic against what Italian postings actually publish.
+
+**Variable pay counts, at half.** When a posting states a total-compensation figure that bundles a bonus, do not test the base alone and do not test the headline alone. Test **base + 50% of the variable** — the realistic expected cash — and show the arithmetic. Alpitronic's UI role is the worked example: €64,000 total including a 30% variable puts base near €44.8K and variable near €19.2K, so the expected figure is roughly **€54K**, clearing the floor. Testing the base alone would have wrongly rejected it.
 
 Do not treat Frecciarossa journey times as commutability. Bologna and Turin are roughly an hour from Milan by high-speed rail — faster than Bergamo by regional train — but daily high-speed fares make that a non-option. Ring membership is about labour markets, not minutes.
 
-**Turin is the standing exception worth understanding.** It holds Italy's densest aerospace cluster outside Rome (Thales Alenia Space, Argotec, Altec, Avio Aero), so the domain match on the ESA Galileo background is the strongest in the country. But Turin tech pay typically sits *below* Milan, so most Turin postings will fail the 50K rule that makes Ring 2 worth it. Expect to flag Turin roles for the candidate to judge rather than to pass or drop them mechanically.
+**Turin is the standing exception worth understanding.** It holds Italy's densest aerospace cluster outside Rome (Thales Alenia Space, Argotec, Altec, Avio Aero), so the domain match on the ESA Galileo background is the strongest in the country. Turin tech pay typically sits *below* Milan, so the Turin **consultancies** will keep failing the 48K rule that makes Ring 2 worth it — verified 2026-09-04: aizoOn €30-35K, Teoresi €28.5-35K, Akkodis €27-35K.
+
+But the exception has an exception, confirmed on the same run: **international product employers and funded startups in Turin do clear the floor outright.** Qualcomm/Arduino posted €55,200-81,600 and Nebuly €50,000-72,000 plus stock, both in English, both asking 3+ years. This is the same rule as Milan — employer type buys the salary, geography only buys funnel volume. Screen Turin by employer type before assuming the pay band.
 
 **Bolzano / South Tyrol carries a language risk the other Ring 2 cities do not.** The province is bilingual Italian/German and many local employers use German as a working language, which trips the Language Gate above — German is not on the candidate's Languages table. Alpitronic is applicable because it runs English in engineering, not because Bolzano is generally accessible. Read the working-language requirement on every South Tyrol posting; do not infer it from the region.
+
+**Alpitronic posts several roles at once — check which one before quoting a number.** Two were live in September 2026 and they are not interchangeable:
+
+| Posting | Compensation | Stack | Verdict |
+|---|---|---|---|
+| **Software Developer - User Interfaces (m/f/d)**, Charger Interfaces | "Total compensation starting from € 64,000 gross per year, including a 30% variable bonus" — base ≈ €44.8K, expected ≈ €54K | HTML5/CSS3/modern JavaScript, "at least one modern JavaScript framework React, Vue, Angular", C++ backend familiarity, Qt a plus. "Fluent in English" | **The Ring 2 exemplar.** Clears the floor. Language gate passes. This is the one the candidate applied to. |
+| **Full Stack Developer - Cybersecurity Hardening (m/f/d)** | "Total compensation starting from € 52,000 gross per year, including a 20% variable bonus" — base ≈ €43.3K, expected ≈ €48K | "front-end (Vue.js/Nuxt.js) and back-end (C#/.NET and PHP/Laravel)" | **Drop on stack**, not on pay. Vue + .NET + Laravel is a genuine mismatch against React/TypeScript/Angular + Node/Java. |
+
+The UI role is the one that justifies Ring 2's existence. Never let the weaker sibling posting be mistaken for it.
 
 #### Pay geography in northern Italy — do not re-derive this wrong
 
 Two intuitions that look right and are not:
 
 1. **"Further north pays more" does not hold against Milan.** Milan is the pay peak for tech in Italy. Bergamo, Brescia, Varese and Como pay *below* Milan — lower cost of living, thinner employer competition. The real north-south gap in Italian wages is Milan-vs-the-south, not north-of-Milan-vs-Milan.
-2. **Alpitronic's ~64K is an Alpitronic effect, not a Bolzano effect.** It is a hypergrowth HPC-charger hardware company hiring against German and Austrian employers, so it pays German-market rates. South Tyrol's median tech pay is above the Italian average (autonomous province, high cost of living, Austrian border) but nowhere near that figure. Never generalise one outlier employer into a regional band.
+2. **Alpitronic's 64K is an Alpitronic effect, not a Bolzano effect.** It is a hypergrowth HPC-charger hardware company hiring against German and Austrian employers, so it pays German-market rates. South Tyrol's median tech pay is above the Italian average (autonomous province, high cost of living, Austrian border) but nowhere near that figure. Never generalise one outlier employer into a regional band.
+3. **A single employer's own postings do not share a band either.** Alpitronic ran 64K and 52K roles simultaneously — see the two-posting table above. Quote the specific requisition, never "Alpitronic pays 64K".
 
 The consequence for search strategy: **geography buys funnel volume, employer type buys salary.** The reliable route to 55-65K is not a different city — it is a different kind of employer in the same cities: foreign-HQ companies paying to a non-Italian band, funded scaleups, and deeptech or hardware firms competing for engineers internationally. Weight employer type at least as heavily as location when prioritising a shortlist.
 
@@ -195,7 +211,7 @@ Does this role advance career goals and contain tasks that energize?
   |---|---|---|---|
   | Milan | 45K € | 45-50K €, ideally 48-50K €+ | 41-45K € occasionally, to widen the funnel |
   | Ring 1 (Milan commuter belt) | 45K € — same as Milan | same as Milan | same as Milan |
-  | Ring 2 (Turin, Genoa, Bologna, Verona, Trento, Bolzano) | 50K € | 50K €+ | none — below 50K, flag rather than pass, exceptional sector match included |
+  | Ring 2 (Turin, Genoa, Bologna, Verona, Trento, Bolzano) | 48K € | 48K €+ | none — below 48K, flag rather than pass, exceptional sector match included. Total-comp figures tested as base + 50% variable |
   | Berlin | 50K € | 50-60K €, ideally 55-60K €+ | none |
 
   **The 45K Milan anchor is a negotiating position, not a filter.** Always ask for 45K in Milan even when the posting's stated maximum is below it - the candidate did exactly this at AS Watson (stated max 41K) as a deliberate stretch, on the reasoning that no offer is lost by asking. Applying to a 41-45K Milan posting is allowed and sometimes right; quoting a number below 45K first is not.

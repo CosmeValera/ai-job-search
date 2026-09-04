@@ -67,10 +67,14 @@ These exist to widen the funnel, not to lower the bar. Both forfeit something th
 
 | Tier | Floor | Below floor |
 |---|---|---|
-| Ring 2 | 50K € | **Flag, never auto-pass.** Exception: an exceptional sector match (space, aerospace, defence, rail, geospatial) is worth surfacing below floor **with the trade-off stated** — never silently. |
-| Tier 2 | 55K € | Flag. Zurich and Geneva need substantially more than 55K to be real, given cost of living — do not treat a nominal 55K there as clearing anything. |
+| Ring 2 | 48K € | **Flag, never auto-pass.** Exception: an exceptional sector match (space, aerospace, defence, rail, geospatial) is worth surfacing below floor **with the trade-off stated** — never silently. |
+| Tier 2 | 52K € | Flag. Zurich and Geneva need substantially more than 52K to be real, given cost of living — do not treat a nominal 52K there as clearing anything. |
 
-**Turin is the standing exception.** It holds Italy's densest aerospace cluster outside Rome (Thales Alenia Space, Argotec, Altec, Avio Aero), so the domain match on the ESA Galileo background is the strongest in the country — but Turin tech pay typically sits *below* Milan, so most Turin postings will fail the 50K rule that makes Ring 2 worth it. Expect to flag Turin roles for the candidate to judge rather than pass or drop them mechanically.
+Both floors were lowered on 2026-09-04 at the candidate's direction (Ring 2 50K → 48K, Tier 2 55K → 52K) to keep the tiers realistic against published numbers.
+
+**Total-compensation figures are tested as base + 50% of the variable.** Never test the base alone and never test the headline alone; show the arithmetic in the Notes cell. Worked example in `04-job-evaluation.md`: Alpitronic's UI role states €64,000 total including a 30% variable, so base ≈ €44.8K and expected ≈ €54K — a clear pass that a base-only test would have wrongly rejected.
+
+**Turin is the standing exception.** It holds Italy's densest aerospace cluster outside Rome (Thales Alenia Space, Argotec, Altec, Avio Aero), so the domain match on the ESA Galileo background is the strongest in the country — and the Turin **consultancies** will keep failing the 48K rule (verified 2026-09-04: aizoOn €30-35K, Teoresi €28.5-35K, Akkodis €27-35K). But international product employers and funded startups there clear it outright: Qualcomm/Arduino €55,200-81,600 and Nebuly €50,000-72,000, both English, both 3+ years. Screen Turin by employer type before assuming the band.
 
 ### Language gates are live across three languages
 
@@ -131,10 +135,41 @@ Number the rows in a **single continuous sequence across all three tables** — 
 
 Keep the `skipped (disabled):` and `health:` lines from Step 5 when they apply. High-match highlights and the Step 4.5 contact links follow the tables, for the shortlisted results only.
 
+### Everything is a table — no prose blocks
+
+The three position tables are not the only tables. **Every section of the output is a table**, the analysis included. The Trade-off block is a table, not paragraphs. Prose is reserved for a single closing caveat where tabulating would misrepresent the finding — never for findings themselves, never for comparison, never for reasoning about a specific posting.
+
+This matters most here: the wide sweep produces the most analysis of any city skill, so it is the one most likely to drift back into paragraphs. It must not.
+
+Emit these after the position tables, in this order, and only when they have rows:
+
+| Section | Columns | Emit when |
+|---|---|---|
+| **Gate failures and drops** | `Company \| Position \| Tier \| Dropped on \| Evidence (quoted)` | Any posting failed a screen. `Dropped on` is one of: `Language gate`, `Below floor`, `Stack gap`, `Discipline gap`, `Seniority gap`, `Mass posting`. Quote Italian, German and French text untranslated so the bar is auditable. |
+| **Ring 1 findings** | `Company \| Position \| Belt city \| Outcome` | Any Milan-pass result landed outside Milan proper. Records that the belt is reachable through wide Milan terms even when every belt result fails on merit — the Override 1 evidence trail. |
+| **Trade-off** | `Factor \| Milan + Ring 1 \| Berlin \| Wider net` | Two or more tiers produced competitive results. One row per factor: top pay stated, best stack fit, domain match, language risk, salary transparency, relocation support, remote / work-from-abroad. |
+| **Framework corrections** | `File \| Current entry \| Evidence this run \| Change needed` | The run contradicted `04-job-evaluation.md` or `search-queries.md`. Do **not** edit those files from inside a search run — table the correction and let the user approve it. Ring 2 assumptions are the likeliest to break, since the tier is newest and thinnest on evidence. |
+| **Already surfaced, still unapplied** | `Company \| Position \| First seen \| Status \| Why still relevant` | `seen_jobs.json` dedup suppressed a posting still marked `new` that is still a strong match. |
+| **Run stats** | `Metric \| Count` | Always. Raw results, unique URLs, cooldown drops, seen_jobs drops, intra-run dupes, kept, detail-fetched, shortlisted, stored as skipped. |
+
+Rules holding across all of them:
+
+| Rule | Meaning |
+|---|---|
+| **Quote, do not summarise** | Any cell asserting what a posting requires carries the posting's own words in quotes. A paraphrased gate failure is not a gate failure. |
+| **One fact per row** | Two gates failed at one company is two rows, not one cell holding both. |
+| **No word cap** | The 20-word Notes cap is the position tables only. These tables exist to carry the detail that cap forced out. |
+| **Empty means omitted** | A section with no rows disappears. Never emit an empty table or a "none found" placeholder row. |
+| **Never rank in the Trade-off table** | It states each tier's position on a factor. It does not declare a winner — the preference rules below do that, in the one line of prose this output allows. |
+
 ### Trade-off rules when comparing across tiers
 
-- **Milan outranks Berlin, and both outrank everything else here.** Same band → Milan. Milan moderately below → still Milan. Milan far below → Berlin. No fixed flip threshold exists and none should be invented; present the comparison and let the candidate decide.
-- **Compare net, not gross,** before calling any gap large. Italian contracts commonly pay 13 or 14 monthly instalments. Swiss and Irish tax and cost of living differ enough that gross figures are not comparable numbers.
-- **Remote and work-from-abroad are first-class factors, not perks.** The Milan preference is about time with one specific person there, so flexibility partly substitutes for the city. A well-paid Tier 2 role with generous work-from-abroad days can beat a poorly-paid Milan role *on the Milan criterion itself*. Say so when it applies.
+These govern what goes in the Trade-off table's cells, and the single line of prose allowed to name a preference.
+
+| Rule | Detail |
+|---|---|
+| **Milan outranks Berlin; both outrank everything else** | Same band → Milan. Milan moderately below → still Milan. Milan far below → Berlin. No fixed flip threshold exists and none should be invented — present the comparison, let the candidate decide. |
+| **Compare net, not gross** | Do this before calling any gap large. Italian contracts commonly pay 13 or 14 monthly instalments. Swiss and Irish tax and cost of living differ enough that gross figures are not comparable numbers. |
+| **Remote and work-from-abroad are first-class factors, not perks** | The Milan preference is about time with one specific person there, so flexibility partly substitutes for the city. A well-paid Tier 2 role with generous work-from-abroad days can beat a poorly-paid Milan role *on the Milan criterion itself*. Give it its own Trade-off row when it applies. |
 
 If the run yields 8+ new jobs, suggest `/rank` — it batch-scores everything against the full framework, which beats eyeballing three tables.
