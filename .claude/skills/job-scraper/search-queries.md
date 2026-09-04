@@ -97,18 +97,29 @@ Relocation is the goal, not an obstacle. Cosme is an EU citizen, so no sponsorsh
 |---|---|---|
 | **Ideal** | **Milan** (first choice), **Berlin** | Full score. Milan outranks Berlin at equal compensation. |
 | **Tier 2** | Dublin, Amsterdam, Munich, Luxembourg, Zurich, Geneva | Surface, rank below the Ideal tier. Included because they pay well, not because they are preferred. Switzerland needs a permit; the rest do not. |
-| **Tier 3 (Italy)** | **Turin** | The only Italian secondary market with real depth (Qualcomm/Arduino, TeamSystem, Accessiway, Zucchetti, Reply). Surface it. |
+| **Ring 1 (Italy)** | Monza/Brianza, Bergamo, Como, Lecco, Varese, Novara, Pavia | Milan commuter belt, scored as Milan. **Do not search these by city name** — see the dead-lane note below. |
+| **Ring 2 (Italy)** | **Turin**, Genoa, Bologna, Verona, Trento, Bolzano | Separate labour markets, not Milan commutes. Conditional on 50K €+ or an exceptional sector match — see `04-job-evaluation.md`. Turin has the most depth (Qualcomm/Arduino, TeamSystem, Accessiway, Zucchetti, Reply) plus Italy's densest aerospace cluster, but typically pays below Milan. |
 | **Remote** | Fully remote within the EU | Surface, treat as acceptable. |
+| **Exclude** | Madrid and all of Spain | Hard exclude. |
+| **Exclude** | UK, US, Singapore, anywhere outside the EU/EEA/Switzerland | Hard exclude. The UK rows in the historical tracker predate this focus and needed sponsorship. |
 
-**Milan satellite cities are a dead lane — checked 2026-08-16, do not re-run.** Searches on Bergamo, Como,
-Monza, Novara and Piacenza returned *zero* locally-posted roles; LinkedIn silently falls back to Milan
-results when a location has no matches, so a full-looking result set there is an artefact, not a finding.
+**Searching Milan satellite cities by name is a dead lane — checked 2026-08-16, do not re-run.** Queries on
+Bergamo, Como, Monza, Novara and Piacenza returned *zero* locally-posted roles; LinkedIn silently falls back
+to Milan results when a location has no matches, so a full-looking result set there is an artefact, not a
+finding.
+
+This is a finding about **query technique, not about the employers**. Ring 1 above is still a real tier: belt
+employers post under `Milan`, `Milan metropolitan area`, `Lombardy`/`Lombardia`, or only on their own careers
+pages. Reach them that way — wide Milan location terms plus direct careers-page checks on named employers
+(D-Orbit in Fino Mornasco, Alstom in Sesto San Giovanni, ST Microelectronics in Agrate Brianza, Leonardo
+Helicopters in the Varese sites, Brembo in Stezzano, Scame, Daze). Treat every named employer as a lead to
+verify, never as a fact.
+
 Brescia and the Emilia belt (Parma, Reggio Emilia, Modena) do have local postings, but they are Italian SMEs
 and consultancies: Italian-language postings, .NET/C# stacks, 28-50K € with most under 45K €. One exception
 worth remembering — eGlue (Reggio Emilia) posted up to 50K € for a React role. Reggio Emilia is ~1h40 from
-Milan, so treat the Emilia belt as its own location, never as a Milan commute.
-| **Exclude** | Madrid and all of Spain | Hard exclude. |
-| **Exclude** | UK, US, Singapore, anywhere outside the EU/EEA/Switzerland | Hard exclude. The UK rows in the historical tracker predate this focus and needed sponsorship. |
+Milan, so treat the Emilia belt as its own location, never as a Milan commute. Neither Brescia nor Emilia is
+in Ring 1.
 
 ## Salary Filter
 

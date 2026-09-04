@@ -22,7 +22,20 @@ Follow these steps **in order**.
 ## Step 1: Load State
 
 1. Read `job_scraper/seen_jobs.json`. If the file is missing or has no entries, tell the user to run `/scrape` first and stop.
-2. Read `job_search_tracker.csv`. Build the exclusion set: any company+role already in the tracker is out of scope regardless of flags - it has been applied to or consciously tracked.
+2. Read `job_search_tracker.csv` (columns: `date,company,sector,role,role_type,channel,status,contact_person,fit_rating,notes,cv_file,cover_letter_file,source`). Build the exclusion set using a **12-month cooldown**, not a permanent ban:
+
+   | Tracker row | Handling |
+   |---|---|
+   | Same company + role, `date` **within the last 12 months** | **Exclude** regardless of flags, including `--all`. |
+   | Same company + role, `date` **older than 12 months** | **Eligible again.** Score it normally and mark `re-apply, last <YYYY-MM> <status>` in its `strengths`/notes so the shortlist shows it is a repeat. |
+   | Same company + role, `date` missing or unparseable | **Exclude.** Fail toward not re-pitching a company too soon. |
+   | Same company, **different** role | Not excluded. The cooldown is per position, not per employer. |
+
+   Compute the cutoff as today minus 12 months from the actual current date - never hardcode it.
+
+   **Matching is fuzzy by necessity.** The tracker's 173 rows were hand-imported from a spreadsheet, so compare case-insensitively, trim whitespace, and ignore legal suffixes (`S.r.l.`, `S.p.A.`, `GmbH`, `SE`, `AG`, `Ltd`, `Inc`). Match roles on meaning, not string equality - "Frontend Developer" and "Front-end Engineer" at the same company are the same position for this rule. When genuinely unsure whether two rows are the same position, **exclude** and note it.
+
+   This matches the cooldown in `/milan`, `/berlin`, `/milan-berlin` and `/milan-berlin-wide`. All five commands share one rule; keep them in sync if it ever changes.
 3. Select candidates: entries with status `new` (or entries of any status with `--all`), minus the exclusion set, filtered by the focus area if one was given.
 4. If no candidates remain, say so ("Nothing new to rank - run /scrape to find fresh postings") and stop.
 5. Read the scoring framework and profile **once**:
