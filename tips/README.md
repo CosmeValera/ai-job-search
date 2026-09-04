@@ -74,7 +74,7 @@ caught it.
 *Source: [koppla, 2026-09-01](postmortems/2026-09-01-koppla.md)*
 
 ### 5. Make them state the success criteria out loud
-The strongest question found so far: *"Six months in, what would tell you this hire worked?"*
+The strongest question found so far: *"In six months from now, what would tell you that having hired me worked?"*
 It is hard to answer with boilerplate, it tells you what the job actually is, and it reads as someone
 thinking about delivering rather than about getting in.
 
