@@ -92,10 +92,71 @@ alongside three other pipelines.
 
 *Source: [koppla, 2026-09-01](postmortems/2026-09-01-koppla.md)*
 
+### 8. Preparation is the whole difference — this was an A/B test
+Three days apart, same 30-minute slot, same candidate.
+
+| | koppla, 2026-09-01 | Alpitronic, 2026-09-04 |
+|---|---|---|
+| Prep | Improvised | 1 hour rehearsing aloud, 5 questions written down, answers memorised, posting understood |
+| Ran for | 20 min | 45 min |
+| Result | Rejected same afternoon | Still live |
+
+Not a controlled experiment — different companies, different roles, and koppla screened with HR
+while Alpitronic screened with the tech lead who would actually work with him. Those are different
+conversations with different bars, and the candidate pools were different too.
+
+But preparation is the **only variable in that table Cosme controls**, and it tracks with how both
+calls went. Treat it as the cheapest lever available, not as proof of causation.
+
+*Source: [Alpitronic, 2026-09-04](postmortems/2026-09-04-alpitronic.md)*
+
+### 9. Speak slowly
+Cosme's own discovery during the Alpitronic call: deliberately slowing down made him far more
+intelligible in English, and it steadied his nerves. Rushing is what rusty C1 sounds like.
+Do this on purpose from the first sentence.
+
+*Source: [Alpitronic, 2026-09-04](postmortems/2026-09-04-alpitronic.md)*
+
+### 10. "Total compensation including X% variable" is not your salary
+Alpitronic's posting said *"from €64,000 gross including a 30% variable bonus."* In the call the 30%
+turned out to be calculated **on** the €64,000, not added to it — base ~€46K. And the variable paid
+out *above 50% but not 100%* last year, so the realistic figure is €55–58K, not €64K.
+
+Always ask two things: **is the percentage on the base or on the total**, and **what did it actually
+pay out, as a percentage, for the last two years**. "Above 50%" is not an answer — push for the number.
+
+*Source: [Alpitronic, 2026-09-04](postmortems/2026-09-04-alpitronic.md)*
+
+### 11. Asking slightly above a stated minimum is low-risk
+Countering €46K with €48–50K got visible discomfort and zero pushback. No company withdraws over a
+~5% gap at first-round stage — they counter, or they hold at their number and let you decide.
+Anchoring on **base only** and leaving the variable untouched is the right structure.
+
+*Source: [Alpitronic, 2026-09-04](postmortems/2026-09-04-alpitronic.md)*
+
+### 12. For rounds that require travel, ask who pays — don't ask to skip it
+Asking to do an on-site assessment remotely reads as low commitment, especially for a role that
+requires relocating to that city. The correct question is whether the company covers travel and
+accommodation. Most serious employers do, and asking tests how serious they are.
+
+*Source: [Alpitronic, 2026-09-04](postmortems/2026-09-04-alpitronic.md)*
+
+### 13. Take notes on their answers, then summarise them back
+When the Alpitronic tech lead answered the six-month question, Cosme wrote the points down and read
+them back as a short summary. It visibly landed. Costs nothing, proves you were listening, and
+converts your question into a second impression.
+
+Related: when you fumble a question, **reason out loud** instead of reciting. The recovery on
+"why Alpitronic" — thinking aloud about how a driver actually uses the charger — went over better
+than the memorised version would have.
+
+*Source: [Alpitronic, 2026-09-04](postmortems/2026-09-04-alpitronic.md)*
+
 ---
 
 ## Postmortems
 
 | Date | Company | Stage reached | Outcome |
 |------|---------|---------------|---------|
+| 2026-09-04 | [Alpitronic](postmortems/2026-09-04-alpitronic.md) | Tech lead screening (round 1 of 3) | Pending |
 | 2026-09-01 | [koppla](postmortems/2026-09-01-koppla.md) | HR screening (round 1 of 4) | Rejected |
